@@ -1,12 +1,27 @@
 {
   "name": "javascript-entity-component-system",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/index.js",
+  "keywords": [
+    "javascript",
+    "simple",
+    "entity",
+    "component",
+    "system",
+    "games"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stuhl/javascript-entitiy-component-system"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "test": "jest --verbose",
+    "testWatch": "jest --verbose --watch"
+  },
+  "author": "Stuhl",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
 }
