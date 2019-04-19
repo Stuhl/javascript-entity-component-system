@@ -5,8 +5,20 @@ class EntityComponentSystem {
     this.entities = []
   }
 
-  displayProcessors() {
-    this.processors.forEach(processor => console.log(processor.name))
+  getProcessorNames() {
+    return this.processors.map(processor => processor.name)
+  }
+
+  hasProcessor(processorName) {
+    return this.processors.find(processor => processor.name === processorName)
+  }
+
+  hasComponent(componentName) {
+    return this.components.find(component => component.name === componentName)
+  }
+
+  hasEntity(entityName) {
+    return this.entities.find(entity => entity.name === entityName)
   }
 
   createEntity(name, components) {
@@ -31,9 +43,9 @@ class EntityComponentSystem {
     this.processors.push(processor)
   }
 
-  getEntitiesFromComponent(component) {
+  getEntitiesFromComponent(componentName) {
     return this.entities.filter(entity => {
-      return entity.components.includes(component)
+      return entity.components.includes(componentName)
     })
   }
 
@@ -63,4 +75,4 @@ class EntityComponentSystem {
   }
 }
 
-export default EntityComponentSystem
+module.exports = EntityComponentSystem
