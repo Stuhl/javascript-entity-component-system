@@ -31,6 +31,33 @@ class EntityComponentSystem {
     return entity
   }
 
+  entityHasComponent(entity, componentName) {
+    return entity.components.includes(componentName)
+  }
+
+  removeComponentFromEntity(entity, componentName) {
+    const indexOfComponent = entity.components.indexOf(componentName)
+    if (indexOfComponent === -1) {
+      throw new Error("Component not found on entity")
+    } else {
+      entity.components = entity.components.filter(component => component !== componentName)
+      const component = ECS.getComponent(componentName)
+      const keys = Object.keys(component.state)
+
+      keys.forEach(key => {
+        delete entity[key]
+      })
+    }
+  }
+
+  addComponentToEntity(entity, component) {
+    if (ECS.entityHasComponent(entity, component.name)) {
+      return
+    }
+    entity = Object.assign(entity, component.state ? component.state : {})
+    entity.components.push(component.name)
+  }
+
   addEntity(entity) {
     this.entities.push(entity)
   }
