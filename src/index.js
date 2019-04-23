@@ -5,10 +5,25 @@ class EntityComponentSystem {
     this.entities = []
   }
 
+  // debugging functions
   getProcessorNames() {
     return this.processors.map(processor => processor.name)
   }
 
+  //get All
+  getProcessors() {
+    return this.processors
+  }
+
+  getComponents() {
+    return this.components
+  }
+
+  getEntities() {
+    return this.entities
+  }
+
+  // has functions, checks inside the arrays where the components, processors and entities are saved
   hasProcessor(processorName) {
     return this.processors.find(processor => processor.name === processorName)
   }
@@ -21,6 +36,7 @@ class EntityComponentSystem {
     return this.entities.find(entity => entity.name === entityName)
   }
 
+  // entity utility functions
   createEntity(name, components) {
     let entity = {name, components}
 
@@ -58,6 +74,7 @@ class EntityComponentSystem {
     entity.components.push(component.name)
   }
 
+  // add functions, adds either entity, processor or component to the system
   addEntity(entity) {
     this.entities.push(entity)
   }
@@ -76,8 +93,17 @@ class EntityComponentSystem {
     })
   }
 
+  // gets specific processor, entity or component
   getComponent(componentName) {
     return this.components.find(component => componentName === component.name)
+  }
+
+  getProcessor(processorName) {
+    return this.processors.find(proc => processorName === proc.name)
+  }
+
+  getEntity(entityName) {
+    return this.entities.find(entity => entityName === entity.name)
   }
 
   runProcessors() {
@@ -96,6 +122,7 @@ class EntityComponentSystem {
     })
   }
 
+  // call this inside the game loop!
   update() {
     this.runProcessors()
     this.runCustomLogicOnEntities()
