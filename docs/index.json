@@ -1,0 +1,2030 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/esdoc.js",
+    "content": "/**\r\n * Entity Component System Class\r\n */\r\nexport class EntityComponentSystem {\r\n  constructor() {\r\n    /**\r\n     * Property where all the components are stored\r\n     * @access private\r\n     * @type {Array}\r\n     */\r\n    this.components = []\r\n    /**\r\n     * Property where all the processors are stored\r\n     * @access private\r\n     * @type {Array}\r\n     */\r\n    this.processors = []\r\n    /**\r\n     * Property where all the entites are stored\r\n     * @access private\r\n     * @type {Array}\r\n     */\r\n    this.entities = []\r\n  }\r\n\r\n  /**\r\n   * Gets all Processor names\r\n   * @returns {Array} Processor Names as String\r\n   */\r\n  getProcessorNames() {\r\n    return this.processors.map(processor => processor.name)\r\n  }\r\n\r\n  /**\r\n   * Gets all Processors\r\n   * @returns {[]Object} All registered Processors\r\n   */\r\n  getProcessors() {\r\n    return this.processors\r\n  }\r\n\r\n  /**\r\n   * Gets all Components\r\n   * @returns {[]Object} All registered Components\r\n   */\r\n  getComponents() {\r\n    return this.components\r\n  }\r\n\r\n  /**\r\n   * Gets all Entities\r\n   * @returns {[]Object} All registered Entities\r\n   */\r\n  getEntities() {\r\n    return this.entities\r\n  }\r\n\r\n  /**\r\n   * Checks if System has specified Processor\r\n   * @param {String} processorName Name of the Processor\r\n   * @returns {Boolean} true/false\r\n   */\r\n  hasProcessor(processorName) {\r\n    return this.processors.find(processor => processor.name === processorName)\r\n  }\r\n\r\n   /**\r\n   * Checks if System has specified Component\r\n   * @param {String} componentName Name of the Component\r\n   * @returns {Boolean} true/false\r\n   */\r\n  hasComponent(componentName) {\r\n    return this.components.find(component => component.name === componentName)\r\n  }\r\n\r\n  /**\r\n   * Checks if System has specified Entity\r\n   * @param {String} entityName Name of the Entity\r\n   * @returns {Boolean} true/false\r\n   */\r\n  hasEntity(entityName) {\r\n    return this.entities.find(entity => entity.name === entityName)\r\n  }\r\n\r\n  /**\r\n   * Compose method to compose a Entity out of components\r\n   * @param {String} entityName Name of the Entity\r\n   * @param {[]String} components Name of the components\r\n   * @returns {Object} Entity\r\n   */\r\n  createEntity(name, components) {\r\n    let entity = {name, components}\r\n\r\n    components.forEach(component => {\r\n      const componentObject = this.components.find(ecsComponent => component === ecsComponent.name)\r\n      entity = Object.assign(entity, componentObject.state)\r\n    })\r\n    return entity\r\n  }\r\n\r\n  /**\r\n   * Checks if Entity has the specified Component\r\n   * @param {Object} entity the Entity you want to check on\r\n   * @param {String} componentName Name of the component\r\n   * @returns {Boolean} true/false\r\n   */\r\n  entityHasComponent(entity, componentName) {\r\n    return entity.components.includes(componentName)\r\n  }\r\n\r\n  /**\r\n   * Removes a component from a Entity\r\n   * @param {Object} entity the Entity you want the component to remove from\r\n   * @param {String} componentName Name of the component\r\n   * @returns {void} Mutates the given Entity\r\n   */\r\n  removeComponentFromEntity(entity, componentName) {\r\n    const indexOfComponent = entity.components.indexOf(componentName)\r\n    if (indexOfComponent === -1) {\r\n      throw new Error(\"Component not found on entity\")\r\n    } else {\r\n      entity.components = entity.components.filter(component => component !== componentName)\r\n      const component = ECS.getComponent(componentName)\r\n      const keys = Object.keys(component.state)\r\n\r\n      keys.forEach(key => {\r\n        delete entity[key]\r\n      })\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Adds a component to a Entity\r\n   * @param {Object} entity the Entity you want to add the component on\r\n   * @param {Object} component The component you want to add\r\n   * @returns {void} Mutates given Entity\r\n   */\r\n  addComponentToEntity(entity, component) {\r\n    if (ECS.entityHasComponent(entity, component.name)) {\r\n      return\r\n    }\r\n    entity = Object.assign(entity, component.state ? component.state : {})\r\n    entity.components.push(component.name)\r\n  }\r\n\r\n  /**\r\n   * Add Entity to System\r\n   * @param {Object} entity The Entity you want to register in the system\r\n   * @returns {void}\r\n   */\r\n  addEntity(entity) {\r\n    this.entities.push(entity)\r\n  }\r\n\r\n  /**\r\n   * Add Component to System\r\n   * @param {Object} component The Component you want to register in the system\r\n   * @returns {void}\r\n   */\r\n  addComponent(component) {\r\n    this.components.push(component)\r\n  }\r\n\r\n  /**\r\n   * Add Processor to System\r\n   * @param {Object} processor The Processor you want to register in the system\r\n   * @returns {void}\r\n   */\r\n  addProcessor(processor) {\r\n    this.processors.push(processor)\r\n  }\r\n\r\n  /**\r\n   * @access private\r\n   */\r\n  getEntitiesFromComponent(componentName) {\r\n    return this.entities.filter(entity => {\r\n      return entity.components.includes(componentName)\r\n    })\r\n  }\r\n\r\n  /**\r\n   * Get specific component from the system\r\n   * @param {String} componentName the component name\r\n   * @returns {Object} The Component\r\n   */\r\n  getComponent(componentName) {\r\n    return this.components.find(component => componentName === component.name)\r\n  }\r\n\r\n  /**\r\n   * Get specific processor from the system\r\n   * @param {String} processorName the processor name\r\n   * @returns {Object} The Processor\r\n   */\r\n  getProcessor(processorName) {\r\n    return this.processors.find(proc => processorName === proc.name)\r\n  }\r\n\r\n  /**\r\n   * Get specific entity from the system\r\n   * @param {String} entityName the entities name\r\n   * @returns {Object} The Entity\r\n   */\r\n  getEntity(entityName) {\r\n    return this.entities.find(entity => entityName === entity.name)\r\n  }\r\n\r\n  /**\r\n   * @access private\r\n   */\r\n  runProcessors() {\r\n    this.processors.forEach(processor => {\r\n      const entities = this.getEntitiesFromComponent(processor.component)\r\n      const component = this.getComponent(processor.component)\r\n      processor.update(component, entities)\r\n    })\r\n  }\r\n\r\n  /**\r\n   * @access private\r\n   */\r\n  runCustomLogicOnEntities() {\r\n    this.entities.forEach(entity => {\r\n      if (entity.update) {\r\n        entity.update()\r\n      }\r\n    })\r\n  }\r\n\r\n  /**\r\n   * Update function that updates every entity within the system. This should be called every frame (preferrably inside the game loop)\r\n   * @return {void}\r\n   */\r\n  update() {\r\n    this.runProcessors()\r\n    this.runCustomLogicOnEntities()\r\n  }\r\n}\r\n",
+    "static": true,
+    "longname": "C:/Users/Monster/Desktop/node packages/javascript-entity-component-system/src/esdoc.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "EntityComponentSystem",
+    "memberof": "src/esdoc.js",
+    "static": true,
+    "longname": "src/esdoc.js~EntityComponentSystem",
+    "access": "public",
+    "export": true,
+    "importPath": "javascript-entity-component-system/src/esdoc.js",
+    "importStyle": "{EntityComponentSystem}",
+    "description": "Entity Component System Class",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "components",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#components",
+    "access": "private",
+    "description": "Property where all the components are stored",
+    "lineNumber": 11,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "processors",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#processors",
+    "access": "private",
+    "description": "Property where all the processors are stored",
+    "lineNumber": 17,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "entities",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#entities",
+    "access": "private",
+    "description": "Property where all the entites are stored",
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "getProcessorNames",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getProcessorNames",
+    "access": "public",
+    "description": "Gets all Processor names",
+    "lineNumber": 30,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Array} Processor Names as String"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": "Processor Names as String"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "getProcessors",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getProcessors",
+    "access": "public",
+    "description": "Gets all Processors",
+    "lineNumber": 38,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{[]Object} All registered Processors"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "[]Object"
+      ],
+      "spread": false,
+      "description": "All registered Processors"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "getComponents",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getComponents",
+    "access": "public",
+    "description": "Gets all Components",
+    "lineNumber": 46,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{[]Object} All registered Components"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "[]Object"
+      ],
+      "spread": false,
+      "description": "All registered Components"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "getEntities",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getEntities",
+    "access": "public",
+    "description": "Gets all Entities",
+    "lineNumber": 54,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{[]Object} All registered Entities"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "[]Object"
+      ],
+      "spread": false,
+      "description": "All registered Entities"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "hasProcessor",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#hasProcessor",
+    "access": "public",
+    "description": "Checks if System has specified Processor",
+    "lineNumber": 63,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} true/false"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "processorName",
+        "description": "Name of the Processor"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "true/false"
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "hasComponent",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#hasComponent",
+    "access": "public",
+    "description": "Checks if System has specified Component",
+    "lineNumber": 72,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} true/false"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "componentName",
+        "description": "Name of the Component"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "true/false"
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "hasEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#hasEntity",
+    "access": "public",
+    "description": "Checks if System has specified Entity",
+    "lineNumber": 81,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} true/false"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entityName",
+        "description": "Name of the Entity"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "true/false"
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "createEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#createEntity",
+    "access": "public",
+    "description": "Compose method to compose a Entity out of components",
+    "lineNumber": 91,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} Entity"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entityName",
+        "description": "Name of the Entity"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "[]String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "components",
+        "description": "Name of the components"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "Entity"
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "entityHasComponent",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#entityHasComponent",
+    "access": "public",
+    "description": "Checks if Entity has the specified Component",
+    "lineNumber": 107,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} true/false"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entity",
+        "description": "the Entity you want to check on"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "componentName",
+        "description": "Name of the component"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "true/false"
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "removeComponentFromEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#removeComponentFromEntity",
+    "access": "public",
+    "description": "Removes a component from a Entity",
+    "lineNumber": 117,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void} Mutates the given Entity"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entity",
+        "description": "the Entity you want the component to remove from"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "componentName",
+        "description": "Name of the component"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": "Mutates the given Entity"
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "addComponentToEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#addComponentToEntity",
+    "access": "public",
+    "description": "Adds a component to a Entity",
+    "lineNumber": 138,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void} Mutates given Entity"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entity",
+        "description": "the Entity you want to add the component on"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "component",
+        "description": "The component you want to add"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": "Mutates given Entity"
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "addEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#addEntity",
+    "access": "public",
+    "description": "Add Entity to System",
+    "lineNumber": 151,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entity",
+        "description": "The Entity you want to register in the system"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "addComponent",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#addComponent",
+    "access": "public",
+    "description": "Add Component to System",
+    "lineNumber": 160,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "component",
+        "description": "The Component you want to register in the system"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "addProcessor",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#addProcessor",
+    "access": "public",
+    "description": "Add Processor to System",
+    "lineNumber": 169,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "processor",
+        "description": "The Processor you want to register in the system"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "getEntitiesFromComponent",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getEntitiesFromComponent",
+    "access": "private",
+    "description": "",
+    "lineNumber": 176,
+    "params": [
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "getComponent",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getComponent",
+    "access": "public",
+    "description": "Get specific component from the system",
+    "lineNumber": 187,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} The Component"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "componentName",
+        "description": "the component name"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The Component"
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "getProcessor",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getProcessor",
+    "access": "public",
+    "description": "Get specific processor from the system",
+    "lineNumber": 196,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} The Processor"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "processorName",
+        "description": "the processor name"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The Processor"
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "getEntity",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#getEntity",
+    "access": "public",
+    "description": "Get specific entity from the system",
+    "lineNumber": 205,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} The Entity"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "entityName",
+        "description": "the entities name"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The Entity"
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "runProcessors",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#runProcessors",
+    "access": "private",
+    "description": "",
+    "lineNumber": 212,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "runCustomLogicOnEntities",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#runCustomLogicOnEntities",
+    "access": "private",
+    "description": "",
+    "lineNumber": 223,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "name": "update",
+    "memberof": "src/esdoc.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/esdoc.js~EntityComponentSystem#update",
+    "access": "public",
+    "description": "Update function that updates every entity within the system. This should be called every frame (preferrably inside the game loop)",
+    "lineNumber": 235,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "name": "src/example.js",
+    "content": "// // Components (just data and state)\r\n// const gravityComponent = {\r\n//   name: \"gravity\",\r\n//   state: {\r\n//     gravity: true\r\n//   }\r\n// }\r\n//\r\n// const positionComponent = {\r\n//   name: \"position\",\r\n//   state: {\r\n//     x: 0,\r\n//     y: 0\r\n//   }\r\n// }\r\n//\r\n// const dragComponent = {\r\n//   name: \"drag\",\r\n//   state: {\r\n//     drag: true\r\n//   }\r\n// }\r\n//\r\n// const accelerationComponent = {\r\n//   name: \"acceleration\",\r\n//   state: {\r\n//     acceleration: 5\r\n//   }\r\n// }\r\n//\r\n// // Processors (handling logic)\r\n// const gravityProcessor = {\r\n//   name: \"gravityProcessor\",\r\n//   component: \"gravity\",\r\n//   update(component, entities) {\r\n//     entities.forEach(entity => {\r\n//       entity.y += 9.81\r\n//     })\r\n//   }\r\n// }\r\n//\r\n// const dragProcessor = {\r\n//   name: \"dragProcessor\",\r\n//   component: \"drag\",\r\n//   update(component, entities) {\r\n//     entities.forEach(entity => {\r\n//       entity.x -= 2\r\n//     })\r\n//   }\r\n// }\r\n//\r\n// const accelerationProcessor = {\r\n//   name: \"accelerationProcessor\",\r\n//   component: \"acceleration\",\r\n//   update(component, entities) {\r\n//     entities.forEach(entity => {\r\n//       entity.x += component.state.acceleration\r\n//     })\r\n//   }\r\n// }\r\n//\r\n// const ecs = new EntityComponentSystem()\r\n//\r\n// ecs.addProcessor(gravityProcessor)\r\n// ecs.addProcessor(dragProcessor)\r\n// ecs.addProcessor(accelerationProcessor)\r\n//\r\n//\r\n// ecs.addComponent(accelerationComponent)\r\n// ecs.addComponent(gravityComponent)\r\n// ecs.addComponent(positionComponent)\r\n// ecs.addComponent(dragComponent)\r\n// // ecs.displayProcessors()\r\n//\r\n// const player = ecs.createEntity(\"player\", [\"position\", \"gravity\"])\r\n// const enemy = ecs.createEntity(\"enemy\", [\"position\", \"gravity\"])\r\n// const car = ecs.createEntity(\"mustang\", [\"position\", \"gravity\", \"drag\", \"acceleration\"])\r\n//\r\n// ecs.addEntity(player)\r\n// ecs.addEntity(enemy)\r\n// ecs.addEntity(car)\r\n// ecs.update()\r\n//\r\n// console.log(ecs)\r\n",
+    "static": true,
+    "longname": "C:/Users/Monster/Desktop/node packages/javascript-entity-component-system/src/example.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "class EntityComponentSystem {\r\n  constructor() {\r\n    this.components = []\r\n    this.processors = []\r\n    this.entities = []\r\n  }\r\n\r\n  // debugging functions\r\n  getProcessorNames() {\r\n    return this.processors.map(processor => processor.name)\r\n  }\r\n\r\n  //get All\r\n  getProcessors() {\r\n    return this.processors\r\n  }\r\n\r\n  getComponents() {\r\n    return this.components\r\n  }\r\n\r\n  getEntities() {\r\n    return this.entities\r\n  }\r\n\r\n  // has functions, checks inside the arrays where the components, processors and entities are saved\r\n  hasProcessor(processorName) {\r\n    return this.processors.find(processor => processor.name === processorName)\r\n  }\r\n\r\n  hasComponent(componentName) {\r\n    return this.components.find(component => component.name === componentName)\r\n  }\r\n\r\n  hasEntity(entityName) {\r\n    return this.entities.find(entity => entity.name === entityName)\r\n  }\r\n\r\n  // entity utility functions\r\n  createEntity(name, components) {\r\n    let entity = {name, components}\r\n\r\n    components.forEach(component => {\r\n      const componentObject = this.components.find(ecsComponent => component === ecsComponent.name)\r\n      entity = Object.assign(entity, componentObject.state)\r\n    })\r\n    return entity\r\n  }\r\n\r\n  entityHasComponent(entity, componentName) {\r\n    return entity.components.includes(componentName)\r\n  }\r\n\r\n  removeComponentFromEntity(entity, componentName) {\r\n    const indexOfComponent = entity.components.indexOf(componentName)\r\n    if (indexOfComponent === -1) {\r\n      throw new Error(\"Component not found on entity\")\r\n    } else {\r\n      entity.components = entity.components.filter(component => component !== componentName)\r\n      const component = ECS.getComponent(componentName)\r\n      const keys = Object.keys(component.state)\r\n\r\n      keys.forEach(key => {\r\n        delete entity[key]\r\n      })\r\n    }\r\n  }\r\n\r\n  addComponentToEntity(entity, component) {\r\n    if (ECS.entityHasComponent(entity, component.name)) {\r\n      return\r\n    }\r\n    entity = Object.assign(entity, component.state ? component.state : {})\r\n    entity.components.push(component.name)\r\n  }\r\n\r\n  // add functions, adds either entity, processor or component to the system\r\n  addEntity(entity) {\r\n    this.entities.push(entity)\r\n  }\r\n\r\n  addComponent(component) {\r\n    this.components.push(component)\r\n  }\r\n\r\n  addProcessor(processor) {\r\n    this.processors.push(processor)\r\n  }\r\n\r\n  getEntitiesFromComponent(componentName) {\r\n    return this.entities.filter(entity => {\r\n      return entity.components.includes(componentName)\r\n    })\r\n  }\r\n\r\n  // gets specific processor, entity or component\r\n  getComponent(componentName) {\r\n    return this.components.find(component => componentName === component.name)\r\n  }\r\n\r\n  getProcessor(processorName) {\r\n    return this.processors.find(proc => processorName === proc.name)\r\n  }\r\n\r\n  getEntity(entityName) {\r\n    return this.entities.find(entity => entityName === entity.name)\r\n  }\r\n\r\n  runProcessors() {\r\n    this.processors.forEach(processor => {\r\n      const entities = this.getEntitiesFromComponent(processor.component)\r\n      const component = this.getComponent(processor.component)\r\n      processor.update(component, entities)\r\n    })\r\n  }\r\n\r\n  runCustomLogicOnEntities() {\r\n    this.entities.forEach(entity => {\r\n      if (entity.update) {\r\n        entity.update()\r\n      }\r\n    })\r\n  }\r\n\r\n  // call this inside the game loop!\r\n  update() {\r\n    this.runProcessors()\r\n    this.runCustomLogicOnEntities()\r\n  }\r\n}\r\n\r\nmodule.exports = EntityComponentSystem\r\n",
+    "static": true,
+    "longname": "C:/Users/Monster/Desktop/node packages/javascript-entity-component-system/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 77,
+    "kind": "class",
+    "name": "EntityComponentSystem",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~EntityComponentSystem",
+    "access": "public",
+    "export": false,
+    "importPath": "javascript-entity-component-system/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false,
+    "ignore": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "member",
+    "name": "components",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#components",
+    "access": "public",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "member",
+    "name": "processors",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#processors",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "entities",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#entities",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "method",
+    "name": "getProcessorNames",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getProcessorNames",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "name": "getProcessors",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getProcessors",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "name": "getComponents",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getComponents",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "method",
+    "name": "getEntities",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getEntities",
+    "access": "public",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "method",
+    "name": "hasProcessor",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#hasProcessor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "params": [
+      {
+        "name": "processorName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "method",
+    "name": "hasComponent",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#hasComponent",
+    "access": "public",
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "params": [
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "method",
+    "name": "hasEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#hasEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entityName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "createEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#createEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "components",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "method",
+    "name": "entityHasComponent",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#entityHasComponent",
+    "access": "public",
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entity",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "name": "removeComponentFromEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#removeComponentFromEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 54,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entity",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 92,
+    "kind": "method",
+    "name": "addComponentToEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#addComponentToEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 69,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entity",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "component",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "addEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#addEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 78,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entity",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 94,
+    "kind": "method",
+    "name": "addComponent",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#addComponent",
+    "access": "public",
+    "description": null,
+    "lineNumber": 82,
+    "undocument": true,
+    "params": [
+      {
+        "name": "component",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 95,
+    "kind": "method",
+    "name": "addProcessor",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#addProcessor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 86,
+    "undocument": true,
+    "params": [
+      {
+        "name": "processor",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "getEntitiesFromComponent",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getEntitiesFromComponent",
+    "access": "public",
+    "description": null,
+    "lineNumber": 90,
+    "undocument": true,
+    "params": [
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "getComponent",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getComponent",
+    "access": "public",
+    "description": null,
+    "lineNumber": 97,
+    "undocument": true,
+    "params": [
+      {
+        "name": "componentName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "method",
+    "name": "getProcessor",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getProcessor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 101,
+    "undocument": true,
+    "params": [
+      {
+        "name": "processorName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "getEntity",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#getEntity",
+    "access": "public",
+    "description": null,
+    "lineNumber": 105,
+    "undocument": true,
+    "params": [
+      {
+        "name": "entityName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "method",
+    "name": "runProcessors",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#runProcessors",
+    "access": "public",
+    "description": null,
+    "lineNumber": 109,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 101,
+    "kind": "method",
+    "name": "runCustomLogicOnEntities",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#runCustomLogicOnEntities",
+    "access": "public",
+    "description": null,
+    "lineNumber": 117,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "name": "update",
+    "memberof": "src/index.js~EntityComponentSystem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~EntityComponentSystem#update",
+    "access": "public",
+    "description": null,
+    "lineNumber": 126,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "",
+    "longname": "C:\\Users\\Monster\\Desktop\\node packages\\javascript-entity-component-system\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"javascript-entity-component-system\",\n  \"version\": \"0.1.0\",\n  \"description\": \"\",\n  \"main\": \"dist/index.js\",\n  \"keywords\": [\n    \"javascript\",\n    \"simple\",\n    \"entity\",\n    \"component\",\n    \"system\",\n    \"games\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/Stuhl/javascript-entitiy-component-system\"\n  },\n  \"scripts\": {\n    \"test\": \"jest --verbose\",\n    \"testWatch\": \"jest --verbose --watch\",\n    \"doc\": \"./node_modules/.bin/esdoc\"\n  },\n  \"author\": \"Stuhl\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^24.7.1\"\n  }\n}\n",
+    "longname": "C:\\Users\\Monster\\Desktop\\node packages\\javascript-entity-component-system\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

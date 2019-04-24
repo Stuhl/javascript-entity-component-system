@@ -1,0 +1,44 @@
+[
+  {
+    "name": "EntityComponentSystem#createEntity",
+    "filePath": "src/esdoc.js",
+    "lines": [
+      {
+        "lineNumber": 84,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 85,
+        "line": "   * Compose method to compose a Entity out of components\r"
+      },
+      {
+        "lineNumber": 86,
+        "line": "   * @param {String} entityName Name of the Entity\r"
+      },
+      {
+        "lineNumber": 87,
+        "line": "   * @param {[]String} components Name of the components\r"
+      },
+      {
+        "lineNumber": 88,
+        "line": "   * @returns {Object} Entity\r"
+      },
+      {
+        "lineNumber": 89,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 90,
+        "line": "  createEntity(name, components) {\r"
+      }
+    ],
+    "codeParams": [
+      "name",
+      "components"
+    ],
+    "docParams": [
+      "entityName",
+      "components"
+    ]
+  }
+]

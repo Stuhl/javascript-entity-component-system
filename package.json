@@ -17,11 +17,14 @@
   },
   "scripts": {
     "test": "jest --verbose",
-    "testWatch": "jest --verbose --watch"
+    "testWatch": "jest --verbose --watch",
+    "doc": "./node_modules/.bin/esdoc"
   },
   "author": "Stuhl",
   "license": "MIT",
   "devDependencies": {
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "jest": "^24.7.1"
   }
 }

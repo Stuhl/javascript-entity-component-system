@@ -1,0 +1,46 @@
+{
+  "coverage": "48.07%",
+  "expectCount": 52,
+  "actualCount": 25,
+  "files": {
+    "src/esdoc.js": {
+      "expectCount": 26,
+      "actualCount": 25,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "src/index.js": {
+      "expectCount": 26,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        9,
+        14,
+        18,
+        22,
+        27,
+        31,
+        35,
+        40,
+        50,
+        54,
+        69,
+        78,
+        82,
+        86,
+        90,
+        97,
+        101,
+        105,
+        109,
+        117,
+        126
+      ]
+    }
+  }
+}
