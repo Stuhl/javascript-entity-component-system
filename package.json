@@ -1,7 +1,7 @@
 {
   "name": "javascript-entity-component-system",
   "version": "0.1.0",
-  "description": "",
+  "description": "A simple JavaScript entity-component-system for games",
   "main": "dist/index.js",
   "keywords": [
     "javascript",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stuhl/javascript-entitiy-component-system"
+    "url": "https://github.com/Stuhl/javascript-entity-component-system"
   },
   "scripts": {
     "test": "jest --verbose",
