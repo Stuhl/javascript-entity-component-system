@@ -10,7 +10,7 @@ If you want a general explanation then head over to [Wikipedia](https://en.wikip
 
 ## Features
 - Gives the most basic features to get going
-- it's small (*1.61kb minified*)
+- it's small (*1.62kb minified*)
 - no dependencies
 - it has documentation
 
@@ -27,6 +27,8 @@ In essence it works like this:
 3. You register those entities in the system.
 4. You call the libraries update function.
 5. It will magically update every entity with the corresponding processor.
+
+**Code examples TBD**
 
 ## Documentation
 [Docs](https://stuhl.github.io/javascript-entity-component-system/)
