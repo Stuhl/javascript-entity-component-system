@@ -1,6 +1,6 @@
 {
   "name": "javascript-entity-component-system",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A simple JavaScript entity-component-system for games",
   "main": "dist/index.js",
   "keywords": [
