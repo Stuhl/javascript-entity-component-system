@@ -18,7 +18,7 @@ If you want a general explanation then head over to [Wikipedia](https://en.wikip
 - Because the philosophy of this library is to be lightweight and simple,  I haven't found a solution yet to make rendering work in a intelligent manner (It would call the rendering processor multiple times per frame which is baaad), so for now use this only to update entities. However there are methods implemented to help you work inside your rendering function.
 
 ## Live Demo
-- TBD
+[JS BIN](https://jsbin.com/bunetigumo/edit?html,output)
 
 ## Tutorial
 In essence it works like this:
