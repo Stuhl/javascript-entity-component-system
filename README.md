@@ -1,5 +1,10 @@
 # A Entity component system that is easy to understand (and lightweight!)
 
+## Installation
+```
+npm i javascript-entity-component-system
+```
+
 ## Why
 I was interested in how these system work. I needed a simple library that isn't too big and doesn't have unnecessary features nobody really needs.
 
