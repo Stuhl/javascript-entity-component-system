@@ -129,4 +129,6 @@ class EntityComponentSystem {
   }
 }
 
+console.log("TEST")
+
 module.exports = EntityComponentSystem
