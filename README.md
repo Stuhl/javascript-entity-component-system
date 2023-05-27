@@ -2,7 +2,7 @@
 ![npm version](https://badgen.net/badge/npm/v1.0/blue)
 ![npm downloads](https://badgen.net/badge/downloads/100%20%2F%20week/green)
 
-ECS.js is a easy to use [Entity Component System](https://en.wikipedia.org/wiki/Entity_component_system) for JavaScript. ECS.js will help you to easier develop your games by making composable pieces of code, mixing and remixing them with entities to your liking.
+JECS (javascript-entity-component-system) is a easy to use [Entity Component System](https://en.wikipedia.org/wiki/Entity_component_system) for JavaScript. JECS will help you to easier develop your games by making composable pieces of code, mixing and remixing them with entities to your liking.
 
 ## Installation
 ```
@@ -10,10 +10,10 @@ npm i javascript-entity-component-system
 ```
 
 ##Features
-- ⚡ **Simple API** - ECS.js has a very simple and easy to use API with a mix of object-oriented and prodecural type of methods. 
-- 🥤 **No Dependencies** - ECS.js is built with TypeScript and compiled to JavaScript without the need of any external libraries. The source code is only ~250 lines long.
-- 🤝 **TypeScript support** - ECS.js is built and is best used with TypeScript. Type defintions and hinting are provided naturally.
-- 📄 **Documentation** - ECS.js has documentation about every method and examples on how to use them.
+- ⚡ **Simple API** - JECS has a very simple and easy to use API with a mix of object-oriented and prodecural type of methods. 
+- 🥤 **No Dependencies** - JECS is built with TypeScript and compiled to JavaScript without the need of any external libraries. The source code is only ~250 lines long.
+- 🤝 **TypeScript support** - JECS is built and is best used with TypeScript. Type defintions and hinting are provided naturally.
+- 📄 **Documentation** - JECS has documentation about every method and examples on how to use them.
 
 ## Live Demo
 [JS BIN](https://jsbin.com/bunetigumo/edit?html,output)
