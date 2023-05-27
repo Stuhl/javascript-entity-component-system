@@ -12,8 +12,9 @@ npm i javascript-entity-component-system
 ##Features
 - ⚡ **Simple API** - JECS has a very simple and easy to use API with a mix of object-oriented and prodecural type of methods. 
 - 🥤 **No Dependencies** - JECS is built with TypeScript and compiled to JavaScript without the need of any external libraries. The source code is only ~250 lines long.
+- 💾 **Lightweight** - JECS is a lightweight library. The minified version sits at 2.80kb.
 - 🤝 **TypeScript support** - JECS is built and is best used with TypeScript. Type defintions and hinting are provided naturally.
-- 📄 **Documentation** - JECS has documentation about every method and examples on how to use them.
+- 📄 **Documentation** - JECS has documentation for every method and often examples on how to use them.
 
 ## Live Demo
 [JS BIN](https://jsbin.com/bunetigumo/edit?html,output)
