@@ -1,2 +1,214 @@
-var t,e,n,o,s;t=module.exports,Object.defineProperty(t,"__esModule",{value:!0,configurable:!0}),e=module.exports,n="default",o=()=>r,Object.defineProperty(e,n,{get:o,set:s,enumerable:!0,configurable:!0});class r{constructor(){this.components=[],this.processors=[],this.entities=[]}getProcessorNames(){return this.processors.map((t=>t.name))}getProcessors(){return this.processors}getComponents(){return this.components}getEntities(){return this.entities}getProcessor(t){if(!this.hasProcessor(t))throw new Error(`getProcessor(): processor "${t}" not found.`);return this.processors.find((e=>e.name===t))}getComponent(t){if(!this.hasComponent(t))throw new Error(`getComponent(): component "${t}" not found.`);return this.components.find((e=>e.name===t))}getEntity(t){if(!this.hasEntity(t))throw new Error(`getEntity(): entity "${t}" not found.`);return this.entities.find((e=>e.name===t))}hasProcessor(t){let e=!1;for(let n of this.processors)n.name===t&&(e=!0);return e}hasComponent(t){let e=!1;for(let n of this.components)n.name===t&&(e=!0);return e}hasEntity(t){let e=!1;for(let n of this.entities)n.name===t&&(e=!0);return e}createEntity(t,e){let n={name:t,components:e,state:{}};return e.forEach((t=>{const e=this.components.find((e=>t===e.name));if(!e)throw new Error(`createEntity(): component ${t} not found. You probably forgot to register the component in the system.`);n.state=Object.assign(n.state,e.state)})),n}entityHasComponent(t,e){return t.components.includes(e)}removeComponentFromEntity(t,e){if(-1===t.components.indexOf(e))throw new Error(`removeComponentFromEntity(): component ${e} not found in entity ${t.name}`);t.components=t.components.filter((t=>t!==e));const n=this.getComponent(e);Object.keys(n.state).forEach((e=>{delete t[e]}))}addComponentToEntity(t,e){if(this.entityHasComponent(t,e))throw new Error(`addComponentToEntity(): Can't add component ${e} - this entity already has this component.`);if(!this.hasComponent(e))throw new Error(`addComponentToEntity(): You can't add component ${e} to entity ${t}, because the component is not registered.`);const n=this.getComponent(e);(t=Object.assign(t,n.state?n.state:{})).components.push(n.name)}addEntity(t){this.entities.push(t)}addComponent(t){const e=t;e.state=t.state?e.state:{},e.onAttach&&e.onAttach(),this.components.push(e)}addProcessor(t){this.processors.push(t)}removeEntity(t){const e=this.entities.indexOf(t);if(-1===e)throw new Error(`removeEntity(): entity "${t.name}" not found.`);this.entities.splice(e,1)}getEntitiesFromComponent(t){return this.entities.filter((e=>e.components.includes(t)))}runProcessors(){this.processors.forEach((t=>{const e=this.getEntitiesFromComponent(t.target),n=this.getComponent(t.target);t.update(n,e)}))}runCustomLogicOnEntities(){this.entities.forEach((t=>{t.update&&t.update()}))}update(){this.runProcessors(),this.runCustomLogicOnEntities()}}
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+$parcel$export(module.exports, "EntityComponentSystem", () => $882b6d93070905b3$export$7403e50fa4958270);
+class $882b6d93070905b3$export$7403e50fa4958270 {
+    constructor(){
+        this.components = [];
+        this.processors = [];
+        this.entities = [];
+    }
+    /**
+  * Gets registered processor names.
+  * @returns All registered processor names in an array.
+  */ getProcessorNames() {
+        return this.processors.map((processor)=>processor.name);
+    }
+    /**
+   * Gets all registered processors.
+   * @returns All registered processors in an array.
+   */ getProcessors() {
+        return this.processors;
+    }
+    /**
+   * Gets all components processors.
+   * @returns All registered components in an array.
+   */ getComponents() {
+        return this.components;
+    }
+    /**
+   * Gets all registered entities.
+   * @returns All registered entities in an array.
+   */ getEntities() {
+        return this.entities;
+    }
+    /**
+   * Gets a registered processor by name.
+   * @param name - Name of the processor
+   * @returns A processor or throws an error.
+   */ getProcessor(name) {
+        const hasProcessor = this.hasProcessor(name);
+        if (!hasProcessor) throw new Error(`getProcessor(): processor "${name}" not found.`);
+        return this.processors.find((processor)=>processor.name === name);
+    }
+    /**
+   * Gets a registered component by name.
+   * @param name - Name of the component
+   * @returns A component or throws an error.
+   */ getComponent(name) {
+        const hasComponent = this.hasComponent(name);
+        if (!hasComponent) throw new Error(`getComponent(): component "${name}" not found.`);
+        return this.components.find((component)=>component.name === name);
+    }
+    /**
+   * Gets a registered entity by name.
+   * @param name -Name of the entity
+   * @returnsA A entity or throws an error. 
+   */ getEntity(name) {
+        const hasEntity = this.hasEntity(name);
+        if (!hasEntity) throw new Error(`getEntity(): entity "${name}" not found.`);
+        return this.entities.find((entity)=>entity.name === name);
+    }
+    /**
+   * Checks if processor is registered by name.
+   * @param name - Name of the processor
+   * @returns true if found or false if not.
+   */ hasProcessor(name) {
+        let found = false;
+        for (let processor of this.processors)if (processor.name === name) found = true;
+        return found;
+    }
+    /**
+   * Checks if component is registered.
+   * @param name - Name of the component
+   * @returns true if found or false if not.
+   */ hasComponent(name) {
+        let found = false;
+        for (let component of this.components)if (component.name === name) found = true;
+        return found;
+    }
+    /**
+   * Checks if entity is registered.
+   * @param name - Name of the entity
+   * @returns true if found or false if not.
+   */ hasEntity(name) {
+        let found = false;
+        for (let entity of this.entities)if (entity.name === name) found = true;
+        return found;
+    }
+    /**
+   * Composes a entity with given components.
+   * @param name - Name of the entity
+   * @param components - An array of component names
+   * @returns The composed entity or throws an error.
+   */ createEntity(name, components) {
+        let entity = {
+            name: name,
+            components: components,
+            state: {}
+        };
+        components.forEach((component)=>{
+            const foundComponent = this.components.find((ECSComponent)=>component === ECSComponent.name);
+            if (!foundComponent) throw new Error(`createEntity(): component ${component} not found. You probably forgot to register the component in the system.`);
+            entity.state = Object.assign(entity.state, foundComponent.state);
+        });
+        return entity;
+    }
+    /**
+   * Checks if an entity has target component.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns true if entity has the component or false if not
+   */ entityHasComponent(entity, component) {
+        return entity.components.includes(component);
+    }
+    /**
+   * Removes component from an entity.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns Void if operation successful or throw an error.
+   */ removeComponentFromEntity(entity, targetComponent) {
+        const indexOfComponent = entity.components.indexOf(targetComponent);
+        if (indexOfComponent === -1) throw new Error(`removeComponentFromEntity(): component ${targetComponent} not found in entity ${entity.name}`);
+        entity.components = entity.components.filter((component)=>component !== targetComponent);
+        const component = this.getComponent(targetComponent);
+        const keys = Object.keys(component.state);
+        keys.forEach((key)=>{
+            delete entity[key];
+        });
+    }
+    /**
+   * Adds a component to an entity.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns Void if operation is successful or throws an error.
+   */ addComponentToEntity(entity, component) {
+        if (this.entityHasComponent(entity, component)) throw new Error(`addComponentToEntity(): Can't add component ${component} - this entity already has this component.`);
+        const isComponentRegistered = this.hasComponent(component);
+        if (!isComponentRegistered) throw new Error(`addComponentToEntity(): You can't add component ${component} to entity ${entity}, because the component is not registered.`);
+        const targetComponent = this.getComponent(component);
+        entity = Object.assign(entity, targetComponent.state ? targetComponent.state : {});
+        entity.components.push(targetComponent.name);
+    }
+    /**
+   * Adds a entity to the system.
+   * @param entity - entity object
+   * @returns Void if successful
+   */ addEntity(entity) {
+        this.entities.push(entity);
+    }
+    /**
+   * Adds a component to the system.
+   * @param component - component object
+   * @returns Void if successful
+   */ addComponent(component) {
+        const passedComponent = component;
+        passedComponent.state = component.state ? passedComponent.state : {};
+        if (passedComponent.onAttach) passedComponent.onAttach();
+        this.components.push(passedComponent);
+    }
+    /**
+   * Adds a processor to the system.
+   * @param processor - processor object
+   * @returns Void if successful
+   */ addProcessor(processor) {
+        this.processors.push(processor);
+    }
+    /**
+   * Removes an entity from the system.
+   * @param entity - entity object
+   * @returns Void if successful or throws an error.
+   */ removeEntity(entity) {
+        const indexOf = this.entities.indexOf(entity);
+        if (indexOf === -1) throw new Error(`removeEntity(): entity "${entity.name}" not found.`);
+        this.entities.splice(indexOf, 1);
+    }
+    /**
+   * Gets all entities that have the target component registered.
+   * @param componentName - Name of the component
+   * @returns All entities in an array.
+   */ getEntitiesFromComponent(componentName) {
+        return this.entities.filter((entity)=>{
+            return entity.components.includes(componentName);
+        });
+    }
+    /**
+   * Runs all processors for it's corresponding components e.g. run the prcoessors update function.
+   * @returns Void if successful
+   */ runProcessors() {
+        this.processors.forEach((processor)=>{
+            const entities = this.getEntitiesFromComponent(processor.target);
+            const component = this.getComponent(processor.target);
+            processor.update(component, entities);
+        });
+    }
+    /**
+   * Run custom logic of an entity e.g. run entity.update()
+   * @returns Void if successful
+   */ runCustomLogicOnEntities() {
+        this.entities.forEach((entity)=>{
+            if (entity.update) entity.update();
+        });
+    }
+    /**
+   * Runs all processors. This should be done per frame e.g. inside your gameloop.
+   * @returns Void if successful
+   */ update() {
+        this.runProcessors();
+        this.runCustomLogicOnEntities();
+    }
+}
+
+
 //# sourceMappingURL=index.js.map

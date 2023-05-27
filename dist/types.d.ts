@@ -24,7 +24,7 @@ export type Entity = {
 /**
  * The Entity Component System class.
  */
-export default class EntityComponentSystem {
+export class EntityComponentSystem {
     /**
      * All registered components
      * @defaultValue []

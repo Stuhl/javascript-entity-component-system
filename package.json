@@ -3,11 +3,6 @@
   "version": "1.0",
   "description": "A simple JavaScript entity-component-system for games",
   "source": "src/index.ts",
-  "targets": {
-    "main": {
-      "optimize": true
-    }
-  },
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
   "keywords": [

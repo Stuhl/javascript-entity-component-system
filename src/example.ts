@@ -1,5 +1,4 @@
-import EntityComponentSystem from "./index"
-
+import {EntityComponentSystem} from "./index"
 
 // setup
 const ECS = new EntityComponentSystem()

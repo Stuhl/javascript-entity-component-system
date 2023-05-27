@@ -26,8 +26,18 @@ In essence it works like this:
 5. Profit
 
 ### Import the Module
+ES Modules / TypeScript
+```TypeScript
+import {EntityComponentSystem} from "javascript-entity-component-system" // CLASS
+import {Component, Entity, Processor} from "javascript-entity-component-system" // TYPES
+
+const ECS = new EntityComponentSystem()
+```
+
+CommonJS / JavaScript
 ```JavaScript
-import {EntityComponentSystem} from "javascript-entity-component-system"
+const {EntityComponentSystem} = require("javascript-entity-component-system") // CLASS
+
 const ECS = new EntityComponentSystem()
 ```
 
