@@ -1,22 +1,22 @@
-type Component = {
+export type Component = {
   name : string
   state: object
   onAttach?: Function
   onDetach?: Function
 }
 
-type ComponentArgument = {
+export type ComponentArgument = {
   name  : string
   state?: object
 }
 
-type Processor = {
+export type Processor = {
   name  : string
   target: string
   update(component: Component, entities: Entity[]): void
 }
 
-type Entity = {
+export type Entity = {
   name      : string
   components: string[]
   state     : {
@@ -25,33 +25,71 @@ type Entity = {
   update?: Function
 }
 
-class EntityComponentSystem {
+/**
+ * The Entity Component System class.
+ */
+export default class EntityComponentSystem {
+  /**
+   * All registered components
+   * @defaultValue []
+   */
   components: Component[]
-  processors: Processor[]
-  entities  : Entity[]
 
+  /**
+   * All registered processors
+   * @defaultValue []
+   */
+  processors: Processor[]
+
+  /**
+   * All registered entities
+   * @defaultValue []
+   */
+  entities  : Entity[]
+  
   constructor() {
     this.components = []
     this.processors = []
     this.entities   = []
   }
 
+  /**
+  * Gets registered processor names.
+  * @returns All registered processor names in an array.
+  */
   getProcessorNames(): string[] {
     return this.processors.map(processor => processor.name)
   }
 
+  /**
+   * Gets all registered processors.
+   * @returns All registered processors in an array.
+   */
   getProcessors(): Processor[] {
     return this.processors
   }
 
+  /**
+   * Gets all components processors.
+   * @returns All registered components in an array.
+   */
   getComponents(): Component[] {
     return this.components
   }
 
+  /**
+   * Gets all registered entities.
+   * @returns All registered entities in an array.
+   */
   getEntities(): Entity[] {
     return this.entities
   }
 
+  /**
+   * Gets a registered processor by name.
+   * @param name - Name of the processor
+   * @returns A processor or throws an error.
+   */
   getProcessor(name: string): Processor {
     const hasProcessor = this.hasProcessor(name)
 
@@ -62,6 +100,11 @@ class EntityComponentSystem {
     return this.processors.find((processor) => processor.name === name) as Processor
   }
 
+  /**
+   * Gets a registered component by name.
+   * @param name - Name of the component
+   * @returns A component or throws an error.
+   */
   getComponent(name: string): Component {
     const hasComponent = this.hasComponent(name)
 
@@ -72,6 +115,11 @@ class EntityComponentSystem {
     return this.components.find((component) => component.name === name) as Component
   }
 
+  /**
+   * Gets a registered entity by name.
+   * @param name -Name of the entity
+   * @returnsA A entity or throws an error. 
+   */
   getEntity(name: string): Component {
     const hasEntity = this.hasEntity(name)
 
@@ -82,6 +130,11 @@ class EntityComponentSystem {
     return this.entities.find((entity) => entity.name === name) as Entity
   }
 
+  /**
+   * Checks if processor is registered by name.
+   * @param name - Name of the processor
+   * @returns true if found or false if not.
+   */
   hasProcessor(name: string): boolean {
     let found = false
     
@@ -94,6 +147,11 @@ class EntityComponentSystem {
     return found
   }
 
+  /**
+   * Checks if component is registered.
+   * @param name - Name of the component
+   * @returns true if found or false if not.
+   */
   hasComponent(name: string): boolean {
     let found = false
 
@@ -106,6 +164,11 @@ class EntityComponentSystem {
     return found
   }
 
+  /**
+   * Checks if entity is registered.
+   * @param name - Name of the entity
+   * @returns true if found or false if not.
+   */
   hasEntity(name: string): boolean {
     let found = false
 
@@ -118,6 +181,12 @@ class EntityComponentSystem {
     return found
   }
 
+  /**
+   * Composes a entity with given components.
+   * @param name - Name of the entity
+   * @param components - An array of component names
+   * @returns The composed entity or throws an error.
+   */
   createEntity(name: string, components: string[]): Entity {
     let entity = {
       name,
@@ -138,10 +207,22 @@ class EntityComponentSystem {
     return entity
   }
 
+  /**
+   * Checks if an entity has target component.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns true if entity has the component or false if not
+   */
   entityHasComponent(entity: Entity, component: string): boolean {
     return entity.components.includes(component)
   }
 
+  /**
+   * Removes component from an entity.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns Void if operation successful or throw an error.
+   */
   removeComponentFromEntity(entity: Entity, targetComponent: string): void {
     const indexOfComponent = entity.components.indexOf(targetComponent)
 
@@ -158,24 +239,43 @@ class EntityComponentSystem {
     })
   }
 
-  addComponentToEntity(entity: Entity, component: ComponentArgument): void {
-
-    if (this.entityHasComponent(entity, component.name)) return
-
-    const hasComponent = this.hasComponent(component.name)
-
-    if (!hasComponent) {
-      throw new Error(`addComponentToEntity(): You can't add component ${component.name} to entity ${entity.name}, because the component is not registered.`)
+  /**
+   * Adds a component to an entity.
+   * @param entity - entity object
+   * @param component - Name of component
+   * @returns Void if operation is successful or throws an error.
+   */
+  addComponentToEntity(entity: Entity, component: string): void {
+    if (this.entityHasComponent(entity, component)) {
+      throw new Error(`addComponentToEntity(): Can't add component ${component} - this entity already has this component.`)
     }
 
-    entity = Object.assign(entity, component.state ? component.state : {})
-    entity.components.push(component.name)
+    const isComponentRegistered = this.hasComponent(component)
+
+    if (!isComponentRegistered) {
+      throw new Error(`addComponentToEntity(): You can't add component ${component} to entity ${entity}, because the component is not registered.`)
+    }
+
+    const targetComponent = this.getComponent(component)
+
+    entity = Object.assign(entity, targetComponent.state ? targetComponent.state : {})
+    entity.components.push(targetComponent.name)
   }
 
+  /**
+   * Adds a entity to the system.
+   * @param entity - entity object
+   * @returns Void if successful
+   */
   addEntity(entity: Entity): void {
     this.entities.push(entity)
   }
 
+  /**
+   * Adds a component to the system.
+   * @param component - component object
+   * @returns Void if successful
+   */
   addComponent(component: ComponentArgument): void {
     const passedComponent = component as Component
     passedComponent.state = component.state ? passedComponent.state : {}
@@ -187,10 +287,20 @@ class EntityComponentSystem {
     this.components.push(passedComponent)
   }
 
+  /**
+   * Adds a processor to the system.
+   * @param processor - processor object
+   * @returns Void if successful
+   */
   addProcessor(processor: Processor): void {
     this.processors.push(processor)
   }
 
+  /**
+   * Removes an entity from the system.
+   * @param entity - entity object
+   * @returns Void if successful or throws an error.
+   */
   removeEntity(entity: Entity): void {
     const indexOf = this.entities.indexOf(entity)
 
@@ -201,12 +311,21 @@ class EntityComponentSystem {
     this.entities.splice(indexOf, 1)
   }
 
-  getEntitiesFromComponent(componentName: string): Entity[] {
+  /**
+   * Gets all entities that have the target component registered.
+   * @param componentName - Name of the component
+   * @returns All entities in an array.
+   */
+  private getEntitiesFromComponent(componentName: string): Entity[] {
     return this.entities.filter(entity => {
       return entity.components.includes(componentName)
     })
   }
 
+  /**
+   * Runs all processors for it's corresponding components e.g. run the prcoessors update function.
+   * @returns Void if successful
+   */
   private runProcessors(): void {
     this.processors.forEach(processor => {
       const entities  = this.getEntitiesFromComponent(processor.target)
@@ -216,6 +335,10 @@ class EntityComponentSystem {
     })
   }
 
+  /**
+   * Run custom logic of an entity e.g. run entity.update()
+   * @returns Void if successful
+   */
   private runCustomLogicOnEntities(): void {
     this.entities.forEach(entity => {
       if (entity.update) {
@@ -224,10 +347,12 @@ class EntityComponentSystem {
     })
   }
 
-  update() {
+  /**
+   * Runs all processors. This should be done per frame e.g. inside your gameloop.
+   * @returns Void if successful
+   */
+  update(): void {
     this.runProcessors()
     this.runCustomLogicOnEntities()
   }
 }
-
-export default EntityComponentSystem

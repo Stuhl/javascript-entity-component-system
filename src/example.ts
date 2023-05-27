@@ -169,7 +169,7 @@ const create100Boxes = () => {
 }
 
 const createPlayerBox = () => {
-  const playerBox = ECS.createEntity("Player", ["position", "playerBox", "control"])
+  const playerBox = ECS.createEntity("Player", ["position", "playerBox", "control", "growEffect"])
 
   playerBox.state.x = canvas.width / 2
   playerBox.state.y = canvas.height / 2
@@ -190,6 +190,6 @@ const gameloop = () => {
   requestAnimationFrame(gameloop)
 }
 
-// createPlayerBox()
 create100Boxes()
+createPlayerBox()
 // gameloop()

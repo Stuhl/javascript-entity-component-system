@@ -110,6 +110,7 @@ After that you register the player in the system:
 ECS.addEntity(Player)
 ```
 
+
 #### Step 3: Let the magic happen
 You're soo close. Call the update function ```ECS.update()``` inside the gameloop.
 ```JavaScript

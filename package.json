@@ -1,8 +1,15 @@
 {
   "name": "javascript-entity-component-system",
-  "version": "0.2.0",
+  "version": "1.0",
   "description": "A simple JavaScript entity-component-system for games",
+  "source": "src/index.ts",
+  "targets": {
+    "main": {
+      "optimize": true
+    }
+  },
   "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "keywords": [
     "javascript",
     "simple",
@@ -17,16 +24,19 @@
   },
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "test": "jest --verbose",
-    "testWatch": "jest --verbose --watch",
+    "build": "parcel build && typedoc src/index.ts",
     "doc": "./node_modules/.bin/esdoc"
   },
   "author": "Stuhl",
   "license": "MIT",
   "devDependencies": {
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
     "jest": "^24.7.1",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "typedoc": "^0.24.7",
+    "typescript": "^5.0.4"
   }
 }
