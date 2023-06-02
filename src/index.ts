@@ -2,7 +2,6 @@ export type Component = {
   name : string
   state: object
   onAttach?: Function
-  onDetach?: Function
 }
 
 export type ComponentArgument = {
@@ -120,7 +119,7 @@ export class EntityComponentSystem {
    * @param name -Name of the entity
    * @returnsA A entity or throws an error. 
    */
-  getEntity(name: string): Component {
+  getEntity(name: string): Entity {
     const hasEntity = this.hasEntity(name)
 
     if (!hasEntity) {
@@ -201,6 +200,10 @@ export class EntityComponentSystem {
         throw new Error(`createEntity(): component ${component} not found. You probably forgot to register the component in the system.`)
       }
 
+      if (foundComponent.onAttach) {
+        foundComponent.onAttach()
+      }
+
       entity.state = Object.assign(entity.state, foundComponent.state)
     })
 
@@ -258,7 +261,7 @@ export class EntityComponentSystem {
 
     const targetComponent = this.getComponent(component)
 
-    entity = Object.assign(entity, targetComponent.state ? targetComponent.state : {})
+    entity.state = Object.assign(entity.state, targetComponent.state ? targetComponent.state : {})
     entity.components.push(targetComponent.name)
   }
 
