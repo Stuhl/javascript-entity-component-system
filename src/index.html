@@ -3,9 +3,37 @@
 <html>
   <head>
     <script type="module" src="./example.ts"></script>
+    <link href="style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <canvas id="game-canvas"></canvas>
+    <div class="container">
+      <canvas id="game-canvas"></canvas>
+      <div class="controls">
+        <details>
+          <summary>Player</summary>
+          <div class="components">
+            <div>
+              <label>Renderer</label>
+              <input checked id="player-renderer" type="checkbox" />
+              <div id="player-renderer-container" class="detail-input">
+                <label>size</label>
+                <input id="player-renderer-size" type="range" min="0" max="100" value="10" />
+              </div>
+            </div>
+            <div>
+              <label>Controls</label>
+              <input checked id="player-controls" type="checkbox" />
+              <div id="player-controls-container" class="detail-input">
+                <label>speed (arrow keys to move)</label>
+                <input id="player-controls-speed" value="2" type="range" min="0" max="10" />
+                <label>run speed (hold Spacebar)</label>
+                <input id="player-controls-run-speed" value="5" type="range" min="0" max="10" />
+              </div>
+            </div>
+            </div>
+        </details>
+      </div>
+    </div>
   </body>
 </html>

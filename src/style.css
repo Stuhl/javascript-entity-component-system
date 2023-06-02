@@ -1,0 +1,43 @@
+html {
+  font-family: Helvetica;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.controls {
+  background-color: hsla(0, 0%, 90%, 1);
+  padding: 20px;
+}
+
+.components > div {
+  margin: 20px 0;
+  background-color: hsla(0, 0%, 93%, 1);
+  padding: 10px;
+}
+
+.detail-input {
+  margin-left: 10px;
+  margin-top : 10px;
+}
+
+.detail-input > label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.detail-input > input {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 500px;
+  }
+}
