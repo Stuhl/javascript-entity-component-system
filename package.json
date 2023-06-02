@@ -1,6 +1,6 @@
 {
   "name": "javascript-entity-component-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple JavaScript entity-component-system for games",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -11,14 +11,17 @@
     "entity",
     "component",
     "system",
-    "games"
+    "games",
+    "html5 games",
+    "web game",
+    "game dev"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Stuhl/javascript-entity-component-system"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html",
+    "dev": "parcel ./src/index.html --no-cache",
     "build": "parcel build && typedoc src/index.ts",
     "doc": "./node_modules/.bin/esdoc"
   },

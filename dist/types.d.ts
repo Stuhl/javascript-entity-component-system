@@ -2,7 +2,6 @@ export type Component = {
     name: string;
     state: object;
     onAttach?: Function;
-    onDetach?: Function;
 };
 export type ComponentArgument = {
     name: string;
@@ -78,7 +77,7 @@ export class EntityComponentSystem {
      * @param name -Name of the entity
      * @returnsA A entity or throws an error.
      */
-    getEntity(name: string): Component;
+    getEntity(name: string): Entity;
     /**
      * Checks if processor is registered by name.
      * @param name - Name of the processor

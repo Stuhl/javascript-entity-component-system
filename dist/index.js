@@ -101,6 +101,7 @@ class $882b6d93070905b3$export$7403e50fa4958270 {
         components.forEach((component)=>{
             const foundComponent = this.components.find((ECSComponent)=>component === ECSComponent.name);
             if (!foundComponent) throw new Error(`createEntity(): component ${component} not found. You probably forgot to register the component in the system.`);
+            if (foundComponent.onAttach) foundComponent.onAttach();
             entity.state = Object.assign(entity.state, foundComponent.state);
         });
         return entity;
@@ -138,7 +139,7 @@ class $882b6d93070905b3$export$7403e50fa4958270 {
         const isComponentRegistered = this.hasComponent(component);
         if (!isComponentRegistered) throw new Error(`addComponentToEntity(): You can't add component ${component} to entity ${entity}, because the component is not registered.`);
         const targetComponent = this.getComponent(component);
-        entity = Object.assign(entity, targetComponent.state ? targetComponent.state : {});
+        entity.state = Object.assign(entity.state, targetComponent.state ? targetComponent.state : {});
         entity.components.push(targetComponent.name);
     }
     /**

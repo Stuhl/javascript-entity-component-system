@@ -1,0 +1,45 @@
+html {
+  font-family: Helvetica;
+}
+
+.container {
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+.controls {
+  background-color: #e6e6e6;
+  padding: 20px;
+}
+
+.components > div {
+  background-color: #ededed;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.detail-input {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.detail-input > label {
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+}
+
+.detail-input > input {
+  margin-bottom: 10px;
+}
+
+@media only screen and (width <= 700px) {
+  .container {
+    max-width: 500px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
