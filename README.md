@@ -1,6 +1,6 @@
 # Entity Component System for Javascript
-![npm version](https://badgen.net/badge/npm/v1.0/blue)
-![npm downloads](https://badgen.net/badge/downloads/100%20%2F%20week/green)
+[![npm version](https://badgen.net/badge/npm/v1.0.1/blue)](https://www.npmjs.com/package/javascript-entity-component-system)
+[![npm downloads](https://badgen.net/badge/downloads/100%20%2F%20week/green)](https://www.npmjs.com/package/javascript-entity-component-system)
 
 JECS (javascript-entity-component-system) is a easy to use [Entity Component System](https://en.wikipedia.org/wiki/Entity_component_system) for JavaScript. JECS will help you to easier develop your games by making composable pieces of code, mixing and remixing them with entities to your liking.
 
