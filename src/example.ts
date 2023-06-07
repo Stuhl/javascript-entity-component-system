@@ -57,12 +57,10 @@ const controlComponent = {
     this.controlsID = id
 
     document.addEventListener("keydown", (event) => {
-      event.preventDefault()
       keys[event.key] = true
     })
 
     document.addEventListener("keyup", (event) => {
-      event.preventDefault()
       delete keys[event.key]
 
       if (!keys["ArrowLeft"]) xDirecton = 0
@@ -71,9 +69,6 @@ const controlComponent = {
       if (!keys["ArrowDown"]) yDirection = 0
       if (!keys[" "]) isSpacebar = false
     })
-  },
-  onRemove() {
-    
   }
 }
 
@@ -88,6 +83,10 @@ const growComponent = {
 const collisionComponent = {
   name: "onCollisionDeleteComponent",
 }
+
+let isGrowEffectChecked = true
+let isJitterChecked = true
+let isFlashColorChecked = true
 
 const collisionProcessor = {
   name: "onCollisionDeleteProcessor",
@@ -130,9 +129,18 @@ const collisionProcessor = {
 
         if (xCollision && yCollision) {
           ECS.removeComponentFromEntity(entity, "onCollisionDeleteComponent")
-          ECS.addComponentToEntity(entity, "growEffect")
-          ECS.addComponentToEntity(entity, "jitter")
-          ECS.addComponentToEntity(entity, "flashColor")
+
+          if (isGrowEffectChecked) {
+            ECS.addComponentToEntity(entity, "growEffect")
+          }
+
+          if (isJitterChecked) {
+            ECS.addComponentToEntity(entity, "jitter")
+          }
+
+          if (isFlashColorChecked) {
+            ECS.addComponentToEntity(entity, "flashColor")
+          }
         }
       }
     })
@@ -274,15 +282,6 @@ const create100Boxes = () => {
   }
 }
 
-const create1EnemyBox = () => {
-  const enemyBox = ECS.createEntity("enemy", ["position", "box", "onCollisionDeleteComponent"])
-
-  enemyBox.state.x = 100
-  enemyBox.state.y = 100
-
-  ECS.addEntity(enemyBox)
-}
-
 const createPlayerBox = () => {
   const playerBox = ECS.createEntity("Player", ["position", "playerBox", "control"])
 
@@ -290,6 +289,34 @@ const createPlayerBox = () => {
   playerBox.state.y = canvas.height / 2
 
   ECS.addEntity(playerBox)
+}
+
+const updatePlayerCodeSnippet = () => {
+  const element = document.getElementById("player-code-snippet")
+  const newSnippet = getPlayerCodeSnippet()
+
+  element.innerHTML = newSnippet
+}
+
+const getPlayerCodeSnippet = () => {
+  const player = ECS.getEntity("Player")
+  const components = player.components.filter(comp => comp !== "position").toString().replace(/,/ig, ", ")
+
+  return `player components: [${components}])`
+}
+
+const updateEnemyCodeSnippet = () => {
+  const element = document.getElementById("enemy-code-snippet")
+  const newSnippet = getEnemyCodeSnippet()
+
+  element.innerHTML = newSnippet
+}
+
+const getEnemyCodeSnippet = () => {
+  const enemy = ECS.getEntity("enemy")
+  const components = enemy.components.filter(comp => comp !== "position").toString().replace(/,/ig, ", ")
+  
+  return `enemy components: [${components}]`
 }
 
 canvas.width = 500
@@ -311,8 +338,9 @@ const gameloop = () => {
 }
 
 create100Boxes()
-// create1EnemyBox()
 createPlayerBox()
+updatePlayerCodeSnippet()
+updateEnemyCodeSnippet()
 gameloop()
 
 
@@ -339,12 +367,16 @@ playerRendererCheckbox.addEventListener("change", () => {
     playerRendererContainer.style.display = "none"
     ECS.removeComponentFromEntity(player, "playerBox")
   }
+
+  updatePlayerCodeSnippet()
 })
 
 playerRendererSize.addEventListener("change", () => {
   const player = ECS.getEntity("Player")
   player.state.height = Number(playerRendererSize.value)
   player.state.width = Number(playerRendererSize.value)
+
+  updatePlayerCodeSnippet()
 })
 
 playerControlsCheckbox.addEventListener("change", () => {
@@ -354,27 +386,138 @@ playerControlsCheckbox.addEventListener("change", () => {
 
   if (isChecked) {
     playerControlsContainer.style.display = "block"
-    ECS.addComponentToEntity(player, "controls")
+    ECS.addComponentToEntity(player, "control")
   }
 
   if (!isChecked) {
     playerControlsContainer.style.display = "none"
-    ECS.removeComponentFromEntity(player, "controls")
+    ECS.removeComponentFromEntity(player, "control")
   }
+
+  updatePlayerCodeSnippet()
 })
 
 playerControlsSpeed.addEventListener("change", () => {
   const player = ECS.getEntity("Player")
   player.state.moveSpeed = Number(playerControlsSpeed.value)
 
-  console.log(player)
+  updatePlayerCodeSnippet()
 })
 
 playerControlsRunSpeed.addEventListener("change", () => {
   const player = ECS.getEntity("Player")
   player.state.runSpeed = Number(playerControlsRunSpeed.value)
+
+  updatePlayerCodeSnippet()
 })
 
-const getPlayerCodeSnippet = () => {
+
+
+const enemyRendererCheckbox = document.getElementById("enemy-renderer") as HTMLInputElement
+const enemyRendererContainer = document.getElementById("enemy-renderer-container")
+const enemyRendererSize = document.getElementById("enemy-renderer-size") as HTMLInputElement
+
+const enemyCollisionCheckbox = document.getElementById("enemy-collision") as HTMLInputElement
+
+const enemyGrowCheckbox = document.getElementById("enemy-grow") as HTMLInputElement
+const enemyGrowContainer = document.getElementById("enemy-grow-container")
+const enemyGrowSpeed = document.getElementById("enemy-grow-speed")
+const enemyGrowMaxSize = document.getElementById("enemy-grow-maxSize")
+
+const enemyJitterCheckbox = document.getElementById("enemy-jitter") as HTMLInputElement
+
+const enemyColorCheckbox = document.getElementById("enemy-color") as HTMLInputElement
+const enemyColorContainer = document.getElementById("enemy-color-container")
+const enemyColorSpeed = document.getElementById("enemy-color-speed")
+
+enemyRendererCheckbox.addEventListener("change", () => {
+  const checkbox = enemyRendererCheckbox
+  const isChecked = checkbox.checked
+
+  const enemies = ECS.getEntitiesByName("enemy")
+
+  enemies.forEach((enemy) => {
+    if (isChecked) {
+      ECS.addComponentToEntity(enemy, "box")
+    }
+
+    if (!isChecked) {
+      ECS.removeComponentFromEntity(enemy, "box")
+    }
+  })
+
+  if (isChecked) {
+    enemyRendererContainer.style.display = "block"
+  }
+
+  if (!isChecked) {
+    enemyRendererContainer.style.display = "none"
+  }
+
+  updateEnemyCodeSnippet()
+})
+
+enemyRendererSize.addEventListener("change", () => {
+  const enemies = ECS.getEntitiesByName("enemy")
+
+  enemies.forEach((enemy) => {
+    enemy.state.height = Number(enemyRendererSize.value)
+    enemy.state.width = Number(enemyRendererSize.value)
+  })
+
+  updatePlayerCodeSnippet()
+})
+
+enemyCollisionCheckbox.addEventListener("change", () => {
+  const checkbox = enemyCollisionCheckbox
+  const isChecked = checkbox.checked
+
+  const enemies = ECS.getEntitiesByName("enemy")
+
+  enemies.forEach((enemy) => {
+    if (isChecked) {
+      ECS.removeComponentFromEntity(enemy, "onCollisionDeleteComponent")
+    }
+
+    if (!isChecked) {
+      ECS.addComponentToEntity(enemy, "onCollisionDeleteComponent")
+    }
+  })
+
+  updateEnemyCodeSnippet()
+})
+
+enemyGrowCheckbox.addEventListener("change", () => {
+  const checkbox = playerControlsCheckbox
+  const isChecked = checkbox.checked
+
+  if (isChecked) {
+    enemyGrowContainer.style.display = "block"
+    isGrowEffectChecked = true
+  }
+
+  if (!isChecked) {
+    enemyGrowContainer.style.display = "none"
+    isGrowEffectChecked = false
+  }
+
+  updateEnemyCodeSnippet()
+})
+
+enemyGrowSpeed.addEventListener("change", () => {
+
+})
+
+playerControlsSpeed.addEventListener("change", () => {
   const player = ECS.getEntity("Player")
-}
+  player.state.moveSpeed = Number(playerControlsSpeed.value)
+
+  updatePlayerCodeSnippet()
+})
+
+playerControlsRunSpeed.addEventListener("change", () => {
+  const player = ECS.getEntity("Player")
+  player.state.runSpeed = Number(playerControlsRunSpeed.value)
+
+  updatePlayerCodeSnippet()
+})

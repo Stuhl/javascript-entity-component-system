@@ -4,13 +4,15 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: max-content minmax(400px, max-content);
   grid-gap: 10px;
 }
 
 .controls {
   background-color: hsla(0, 0%, 90%, 1);
   padding: 20px;
+  display: grid;
+  grid-gap: 50px;
 }
 
 .components > div {
@@ -27,11 +29,23 @@ html {
 .detail-input > label {
   display: block;
   font-size: 16px;
-  font-weight: 600;
 }
 
 .detail-input > input {
   margin-bottom: 10px;
+}
+
+.label-header {
+  font-weight: 600;
+}
+
+code {
+  background-color: hsla(0, 0%, 100%, 1);
+  padding         : 5px;
+  font-size       : 16px;
+  color           : rgb(14, 38, 173);
+  max-width       : 100px;
+  overflow-x      : scroll;
 }
 
 @media only screen and (max-width: 700px) {

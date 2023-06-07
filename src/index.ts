@@ -117,7 +117,7 @@ export class EntityComponentSystem {
   /**
    * Gets a registered entity by name.
    * @param name -Name of the entity
-   * @returnsA A entity or throws an error. 
+   * @returns A entity or throws an error. 
    */
   getEntity(name: string): Entity {
     const hasEntity = this.hasEntity(name)
@@ -127,6 +127,15 @@ export class EntityComponentSystem {
     }
 
     return this.entities.find((entity) => entity.name === name) as Entity
+  }
+
+  /**
+   * Gets all registered entities that match the given name.
+   * @param name -Name of the entity
+   * @returns An array of entities or an empty array.
+   */
+  getEntitiesByName(name: string): Entity[] {
+    return this.entities.filter((entity) => entity.name === name)
   }
 
   /**

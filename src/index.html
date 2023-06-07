@@ -10,28 +10,69 @@
     <div class="container">
       <canvas id="game-canvas"></canvas>
       <div class="controls">
-        <details>
+        <details open>
           <summary>Player</summary>
           <div class="components">
             <div>
-              <label>Renderer</label>
+              <label class="label-header">Renderer</label>
               <input checked id="player-renderer" type="checkbox" />
               <div id="player-renderer-container" class="detail-input">
-                <label>size</label>
+                <label>Size</label>
                 <input id="player-renderer-size" type="range" min="0" max="100" value="10" />
               </div>
             </div>
             <div>
-              <label>Controls</label>
+              <label class="label-header">Controls</label>
               <input checked id="player-controls" type="checkbox" />
               <div id="player-controls-container" class="detail-input">
-                <label>speed (arrow keys to move)</label>
+                <label>Speed (arrow keys to move)</label>
                 <input id="player-controls-speed" value="2" type="range" min="0" max="10" />
-                <label>run speed (hold Spacebar)</label>
+                <label>Run speed (hold Spacebar)</label>
                 <input id="player-controls-run-speed" value="5" type="range" min="0" max="10" />
               </div>
             </div>
+          </div>
+          <code id="player-code-snippet"></code>
+        </details>
+        <details open>
+          <summary>Enemy</summary>
+          <div class="components">
+            <div>
+              <label class="label-header">Renderer</label>
+              <input checked id="enemy-renderer" type="checkbox" />
+              <div id="enemy-renderer-container" class="detail-input">
+                <label>Size</label>
+                <input id="enemy-renderer-size" type="range" min="0" max="100" value="20" />
+              </div>
             </div>
+            <div>
+              <label class="label-header">Collision</label>
+              <input checked id="enemy-collision" type="checkbox" />
+            </div>
+            <div>
+              <label class="label-header">Grow (on collision)</label>
+              <input checked id="enemy-grow" type="checkbox" />
+              <div id="enemy-grow-container" class="detail-input">
+                <label>Speed</label>
+                <input id="enemy-grow-speed" value="0.1" type="range" min="0" max="10" />
+                <label>Max grow size</label>
+                <input id="enemy-grow-maxSize" value="50" type="range" min="20" max="100" />
+              </div>
+            </div>
+            <div>
+              <label class="label-header">Jitter (on collision)</label>
+              <input checked id="enemy-jitter" type="checkbox" />
+            </div>
+            <div>
+              <label class="label-header">Color Flash (on collision)</label>
+              <input checked id="enemy-color" type="checkbox" />
+              <div id="enemy-color-container" class="detail-input">
+                <label>Speed (lower is faster)</label>
+                <input id="enemy-color-speed" value="200" type="range" min="20" max="500" />
+              </div>
+            </div>
+          </div>
+          <code id="enemy-code-snippet"></code>
         </details>
       </div>
     </div>
