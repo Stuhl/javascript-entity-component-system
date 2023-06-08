@@ -101,8 +101,7 @@ const collisionProcessor = {
         if (!isPlayer) {
           continue
         }
-
-
+        
         const targetPosition = ECS.entityHasComponent(targetEntity, "position")
         const targetRenderer = ECS.entityHasComponent(targetEntity, "box") || ECS.entityHasComponent(targetEntity, "playerBox")
         const hasPosition = ECS.entityHasComponent(entity, "position")

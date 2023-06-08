@@ -1,0 +1,39 @@
+button {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#reset-button {
+  color: #023;
+  background-color: #6cf;
+}
+
+.container {
+  grid-gap: 20px;
+  grid-template-columns: auto 1fr;
+  display: grid;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.buttons {
+  width: max-content;
+  grid-gap: 5px;
+  display: grid;
+}
+
+.checkboxes {
+  grid-gap: 20px;
+  width: max-content;
+  margin-bottom: 50px;
+  display: grid;
+}
+
+/*# sourceMappingURL=index.69ee24ed.css.map */

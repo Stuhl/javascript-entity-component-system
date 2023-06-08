@@ -1,0 +1,37 @@
+button {
+  border: none;
+  background-color: hsla(0, 0%, 95%, 1);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#reset-button {
+  background-color: hsla(200, 100%, 70%, 1);
+  color: hsla(200, 100%, 10%, 1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.buttons {
+  display: grid;
+  width: max-content;
+  grid-gap: 5px;
+}
+
+.checkboxes {
+  display: grid;
+  grid-gap: 20px;
+  width: max-content;
+  margin-bottom: 50px;
+}
