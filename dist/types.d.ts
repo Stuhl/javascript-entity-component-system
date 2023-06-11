@@ -1,24 +1,19 @@
 export type Component = {
     name: string;
-    state: object;
-    onAttach?: Function;
-};
-export type ComponentArgument = {
-    name: string;
-    state?: object;
-};
-export type Processor = {
-    name: string;
-    target: string;
-    update(component: Component, entities: Entity[]): void;
-};
-export type Entity = {
-    name: string;
-    components: string[];
     state: {
         [key: string]: any;
     };
-    update?: Function;
+    onAttach?: Function;
+};
+export type Processor = {
+    name: string;
+    required: string[];
+    update(entity: Entity, components: Component[], processor: Processor): void;
+};
+export type Entity = {
+    name: string;
+    components: Component[];
+    processors: Processor[];
 };
 /**
  * The Entity Component System class.
@@ -40,11 +35,6 @@ export class EntityComponentSystem {
      */
     entities: Entity[];
     constructor();
-    /**
-    * Gets registered processor names.
-    * @returns All registered processor names in an array.
-    */
-    getProcessorNames(): string[];
     /**
      * Gets all registered processors.
      * @returns All registered processors in an array.
@@ -75,9 +65,16 @@ export class EntityComponentSystem {
     /**
      * Gets a registered entity by name.
      * @param name -Name of the entity
-     * @returnsA A entity or throws an error.
+     * @returns A entity or throws an error.
      */
     getEntity(name: string): Entity;
+    /**
+     * Gets all registered entities that match the given name.
+     * @param name -Name of the entity
+     * @returns An array of entities or an empty array.
+     */
+    getEntitiesByName(name: string): Entity[];
+    getEntityComponents(entity: Entity, components: string[]): Component[];
     /**
      * Checks if processor is registered by name.
      * @param name - Name of the processor
@@ -100,9 +97,10 @@ export class EntityComponentSystem {
      * Composes a entity with given components.
      * @param name - Name of the entity
      * @param components - An array of component names
+     * @param processors - An array of processor names
      * @returns The composed entity or throws an error.
      */
-    createEntity(name: string, components: string[]): Entity;
+    createEntity(name: string, components: string[], processors: string[]): Entity;
     /**
      * Checks if an entity has target component.
      * @param entity - entity object
@@ -111,12 +109,26 @@ export class EntityComponentSystem {
      */
     entityHasComponent(entity: Entity, component: string): boolean;
     /**
-     * Removes component from an entity.
+     * Checks if an entity has target processor.
+     * @param entity - entity object
+     * @param processor - Name of processor
+     * @returns true if entity has the processor or false if not
+     */
+    entityHasProcessor(entity: Entity, processor: string): boolean;
+    /**
+     * Removes a component from an entity.
      * @param entity - entity object
      * @param component - Name of component
      * @returns Void if operation successful or throw an error.
      */
-    removeComponentFromEntity(entity: Entity, targetComponent: string): void;
+    removeComponentFromEntity(entity: Entity, component: string): void;
+    /**
+     * Removes processor from an entity.
+     * @param entity - entity object
+     * @param processor - Name of processor
+     * @returns Void if operation successful or throws an error.
+     */
+    removeProcessorFromEntity(entity: Entity, processor: string): void;
     /**
      * Adds a component to an entity.
      * @param entity - entity object
@@ -124,6 +136,13 @@ export class EntityComponentSystem {
      * @returns Void if operation is successful or throws an error.
      */
     addComponentToEntity(entity: Entity, component: string): void;
+    /**
+     * Adds a processor to an entity.
+     * @param entity - entity object
+     * @param processor - Name of processor
+     * @returns Void if operation is successful or throws an error.
+     */
+    addProcessorToEntity(entity: Entity, processor: string): void;
     /**
      * Adds a entity to the system.
      * @param entity - entity object
@@ -135,7 +154,7 @@ export class EntityComponentSystem {
      * @param component - component object
      * @returns Void if successful
      */
-    addComponent(component: ComponentArgument): void;
+    addComponent(component: Component): void;
     /**
      * Adds a processor to the system.
      * @param processor - processor object
@@ -148,6 +167,11 @@ export class EntityComponentSystem {
      * @returns Void if successful or throws an error.
      */
     removeEntity(entity: Entity): void;
+    /**
+     * Removes all entities from the system.
+     * @returns void
+     */
+    removeAllEntities(): void;
     /**
      * Runs all processors. This should be done per frame e.g. inside your gameloop.
      * @returns Void if successful

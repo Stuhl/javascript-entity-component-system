@@ -1,10 +1,8 @@
-import {EntityComponentSystem} from "./index"
+import { EntityComponentSystem, Component, Processor, Entity } from "./index"
 
-// setup
-const ECS = new EntityComponentSystem()
-const canvas = document.getElementById("game-canvas") as HTMLCanvasElement
+const ecs = new EntityComponentSystem()
 
-const positionComponent = {
+const positionComponent: Component = {
   name : "position",
   state: {
     x: 0,
@@ -12,511 +10,285 @@ const positionComponent = {
   }
 }
 
-const boxComponent = {
-  name : "box",
+const massComponent: Component = {
+  name : "mass",
   state: {
-    width : 20,
-    height: 20
+    mass     : 0.2,
+    velocityX: 1,
+    velocityY: 0
   }
 }
 
-const playerBox = {
-  name: "playerBox",
+const shapeComponent: Component = {
+  name : "shape",
   state: {
-    width: 10,
-    height: 10
+    size : 10,
+    color: "red"
   }
 }
 
-const jitterComponent = {
-  name: "jitter"
-}
-
-let xDirecton = 0
-let yDirection = 0
-let isSpacebar = false
-
-const controlComponent = {
-  name: "control",
+const collisionComponent: Component = {
+  name : "collision",
   state: {
-    moveSpeed: 2,
-    runSpeed: 5,
-    controlsID: null
-  },
-  onAttach() {
-    const keys = {}
-
-    const id = setInterval(() => {
-      if (keys["ArrowLeft"]) xDirecton = -1
-      if (keys["ArrowRight"]) xDirecton = 1
-      if (keys["ArrowUp"]) yDirection = -1
-      if (keys["ArrowDown"]) yDirection = 1
-      if (keys[" "]) isSpacebar = true
-    }, 20)
-
-    this.controlsID = id
-
-    document.addEventListener("keydown", (event) => {
-      keys[event.key] = true
-    })
-
-    document.addEventListener("keyup", (event) => {
-      delete keys[event.key]
-
-      if (!keys["ArrowLeft"]) xDirecton = 0
-      if (!keys["ArrowRight"]) xDirecton = 0
-      if (!keys["ArrowUp"]) yDirection = 0
-      if (!keys["ArrowDown"]) yDirection = 0
-      if (!keys[" "]) isSpacebar = false
-    })
+    collisionX: false,
+    collisionY: false
   }
 }
 
-const growComponent = {
-  name : "growEffect",
-  state: {
-    growSpeed  : 0.1,
-    maxGrowSize: 50,
+const gravityProcessor: Processor = {
+  name    : "gravity_processor",
+  required: ["position", "mass"],
+  update(entity: Entity, components: Component[], processor: Processor) {
+    const [position, mass] = components
+
+    mass.state.velocityY += mass.state.mass
+
+    position.state.y += mass.state.velocityY
+    position.state.x += mass.state.velocityX
   }
 }
 
-const collisionComponent = {
-  name: "onCollisionDeleteComponent",
-}
+const shapeDrawProcessor: Processor = {
+  name    : "shape_draw_processor",
+  required: ["position", "shape"],
+  update(entity: Entity, components: Component[], processor: Processor) {
+    const [position, shape] = components
 
-let isGrowEffectChecked = true
-let isJitterChecked = true
-let isFlashColorChecked = true
-
-const collisionProcessor = {
-  name: "onCollisionDeleteProcessor",
-  target: "onCollisionDeleteComponent",
-  update(component, entities) {
-    entities.forEach((entity) => {
-      const allEntities = ECS.getEntities()
-
-      for (let targetEntity of allEntities) {
-        const isPlayer = targetEntity.name === "Player"
-
-        if (!isPlayer) {
-          continue
-        }
-        
-        const targetPosition = ECS.entityHasComponent(targetEntity, "position")
-        const targetRenderer = ECS.entityHasComponent(targetEntity, "box") || ECS.entityHasComponent(targetEntity, "playerBox")
-        const hasPosition = ECS.entityHasComponent(entity, "position")
-        const hasRenderer = ECS.entityHasComponent(entity, "box") || ECS.entityHasComponent(entity, "playerBox")
-        const hasCollision = ECS.entityHasComponent(entity, "onCollisionDeleteComponent")
-        const isSelf = targetEntity === entity
-
-        if (!hasPosition || !hasRenderer || isSelf || !targetPosition || !targetRenderer || !hasCollision) {
-          continue
-        }
-
-        const x = entity.state.x
-        const y = entity.state.y
-        const width = entity.state.width
-        const height = entity.state.height
-
-        const targetX = targetEntity.state.x
-        const targetY = targetEntity.state.y
-        const targetWidth = targetEntity.state.width
-        const targetHeight = targetEntity.state.height
-
-        const xCollision = (x + width) >= targetX && x <= (targetX + targetWidth)
-        const yCollision = (y + height) >= targetY && y <= (targetY + targetHeight)
-
-        if (xCollision && yCollision) {
-          ECS.removeComponentFromEntity(entity, "onCollisionDeleteComponent")
-
-          if (isGrowEffectChecked) {
-            ECS.addComponentToEntity(entity, "growEffect")
-          }
-
-          if (isJitterChecked) {
-            ECS.addComponentToEntity(entity, "jitter")
-          }
-
-          if (isFlashColorChecked) {
-            ECS.addComponentToEntity(entity, "flashColor")
-          }
-        }
-      }
-    })
+    context.translate(position.state.x, position.state.y)
+    context.fillStyle = shape.state.color
+    context.fillRect(0, 0, shape.state.size, shape.state.size)
+    context.translate(-position.state.x, -position.state.y)
   }
 }
 
-const growProcesssor = {
-  name: "growProcessor",
-  target: "growEffect",
-  update(component, entities) {
-    entities.forEach((entity) => {
-      entity.state.width += entity.state.growSpeed * (Math.random() * 5)
-      entity.state.height += entity.state.growSpeed * (Math.random() * 5)
+const edgeCollisionProcessor: Processor = {
+  name: "edge_collision_processor",
+  required: ["position", "collision", "shape"],
+  update(entity: Entity, components: Component[], processor: Processor) {
+    const [position, collision, shape] = components
 
-      if (entity.state.width > entity.state.maxGrowSize) {
-        ECS.removeEntity(entity)
-        score += 10
-      }
-    })
+    const x    = position.state.x
+    const y    = position.state.y
+    const size = shape.state.size
+
+    if (x <= 0 || x + size >= canvas.width) {
+      collision.state.collisionX = true
+    } else {
+      collision.state.collisionX = false
+    }
+
+    if (y <= 0 || y + size >= canvas.height) {
+      collision.state.collisionY = true
+    } else {
+      collision.state.collisionY = false
+    }
   }
 }
 
-const controlProcessor = {
-  name  : "controlProcessor",
-  target: "control",
-  update(component, entities) {
-    entities.forEach(entity => {
-      entity.state.x += xDirecton * entity.state.moveSpeed
-      entity.state.y += yDirection * entity.state.moveSpeed
+const bounceProcessor: Processor = {
+  name    : "bounce_processor",
+  required: ["position", "collision", "mass"],
+  update(entity: Entity, components: Component[], processor: Processor) {
+    const [position, collision, mass] = components
 
-      if (isSpacebar && xDirecton) {
-        entity.state.x += xDirecton * entity.state.runSpeed
-      }
+    if (collision.state.collisionY) {
+      mass.state.velocityY = -mass.state.velocityY
+    }
 
-      if (isSpacebar && yDirection) {
-        entity.state.y += yDirection * entity.state.runSpeed
-      }
-    })
+    if (collision.state.collisionX) {
+      mass.state.velocityX = -mass.state.velocityX
+    }
   }
 }
 
-const jitterProcessor = {
-  name  : "jitterProcessor",
-  target: "jitter",
-  update(component, entities) {
-    entities.forEach((entity) => {
-      const currentX = entity.state.x
-      const currentY = entity.state.y
+const jitterProcessor: Processor = {
+  name: "jitter_processor",
+  required: ["position"],
+  update(entity: Entity, components: Component[], processor: Processor) {
+    const [position] = components
 
-      const newX = (Math.random() * 10) - 5 + currentX
-      const newY = (Math.random() * 10) - 5 + currentY
-
-      entity.state.x = newX
-      entity.state.y = newY
-    })
+    position.state.x += Math.random() * (5 - -5) - 5
+    position.state.y += Math.random() * (5 - -5) - 5
   }
 }
 
-const boxRenderingProcessor = {
-  name  : "boxRenderingProcessor",
-  target: "box",
-  update(component, entities) {
-    entities.forEach(entity => {
-      const hasFlashColor = ECS.entityHasComponent(entity, "flashColor")
+ecs.addComponent(positionComponent)
+ecs.addComponent(massComponent)
+ecs.addComponent(shapeComponent)
+ecs.addComponent(collisionComponent)
 
-      ctx.translate(entity.state.x, entity.state.y)
-      ctx.fillStyle = hasFlashColor ? entity.state.flashColorCurrent : "orange"
-      ctx.fillRect(0, 0, entity.state.width, entity.state.height)
-      ctx.translate(-entity.state.x, -entity.state.y)
-    })
-  }
-}
+ecs.addProcessor(gravityProcessor)
+ecs.addProcessor(shapeDrawProcessor)
+ecs.addProcessor(edgeCollisionProcessor)
+ecs.addProcessor(bounceProcessor)
+ecs.addProcessor(jitterProcessor)
 
-const playerBoxRenderingProcessor = {
-  name: "playerBoxRenderingProcessor",
-  target: "playerBox",
-  update(component, entities) {
-    entities.forEach(entity => {
-      ctx.beginPath()
-      ctx.fillStyle = "white"
-      ctx.fillRect(entity.state.x, entity.state.y, entity.state.width, entity.state.height)
-      ctx.closePath()
-    })
-  }
-}
-
-const flashColorComponent = {
-  name: "flashColor",
-  state: {
-    flashColorTimer: 0,
-    flashColorSpeed: 200,
-    flashColor1: "white",
-    flashColor2: "red",
-    flashColorCurrent: "red"
-  }
-}
-
-const flashColorProcessor = {
-  name: "flashColorProcessor",
-  target: "flashColor",
-  update(component, entities) {
-    entities.forEach((entity) => {
-      entity.state.flashColorTimer += 20
-
-      if (entity.state.flashColorTimer >= entity.state.flashColorSpeed) {
-        entity.state.flashColorTimer = 0
-        entity.state.flashColorCurrent = entity.state.flashColorCurrent === entity.state.flashColor1 ? entity.state.flashColor2 : entity.state.flashColor1
-      }
-    })
-  }
-}
-
-ECS.addComponent(positionComponent)
-ECS.addComponent(boxComponent)
-ECS.addComponent(jitterComponent)
-ECS.addComponent(controlComponent)
-ECS.addComponent(playerBox)
-ECS.addComponent(growComponent)
-ECS.addComponent(collisionComponent)
-ECS.addComponent(flashColorComponent)
-
-ECS.addProcessor(flashColorProcessor)
-ECS.addProcessor(collisionProcessor)
-ECS.addProcessor(growProcesssor)
-ECS.addProcessor(jitterProcessor)
-ECS.addProcessor(boxRenderingProcessor)
-ECS.addProcessor(controlProcessor)
-ECS.addProcessor(playerBoxRenderingProcessor)
-
-
-const create100Boxes = () => {
-  for (let i = 0; i < 100; i++) {
-    const box = ECS.createEntity("enemy", ["position", "box", "onCollisionDeleteComponent"])
-
-    box.state.x = Math.random() * canvas.width
-    box.state.y = Math.random() * canvas.height
-
-    ECS.addEntity(box)
-  }
-}
-
-const createPlayerBox = () => {
-  const playerBox = ECS.createEntity("Player", ["position", "playerBox", "control"])
-
-  playerBox.state.x = canvas.width / 2
-  playerBox.state.y = canvas.height / 2
-
-  ECS.addEntity(playerBox)
-}
-
-const updatePlayerCodeSnippet = () => {
-  const element = document.getElementById("player-code-snippet")
-  const newSnippet = getPlayerCodeSnippet()
-
-  element.innerHTML = newSnippet
-}
-
-const getPlayerCodeSnippet = () => {
-  const player = ECS.getEntity("Player")
-  const components = player.components.filter(comp => comp !== "position").toString().replace(/,/ig, ", ")
-
-  return `player components: [${components}])`
-}
-
-const updateEnemyCodeSnippet = () => {
-  const element = document.getElementById("enemy-code-snippet")
-  const newSnippet = getEnemyCodeSnippet()
-
-  element.innerHTML = newSnippet
-}
-
-const getEnemyCodeSnippet = () => {
-  const enemy = ECS.getEntity("enemy")
-  const components = enemy.components.filter(comp => comp !== "position").toString().replace(/,/ig, ", ")
-  
-  return `enemy components: [${components}]`
-}
-
-canvas.width = 500
-canvas.height = 500
-canvas.style.backgroundColor = "black"
-
-const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
-
-let score = 0
+const canvas  = document.querySelector("canvas")
+const context = canvas.getContext("2d")
 
 const gameloop = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  ECS.update()
-  ctx.font = "30px Comis-Sans"
-  ctx.fillText("Score:", 30, 30)
-  ctx.fillText(String(score), 110, 32)
+  context.clearRect(0, 0, canvas.width, canvas.height)
 
+  ecs.update()
   requestAnimationFrame(gameloop)
 }
 
-create100Boxes()
-createPlayerBox()
-updatePlayerCodeSnippet()
-updateEnemyCodeSnippet()
+let hasGravity = true
+let hasCollision = true
+let hasJitter = false
+
+const addDefaultBox = () => {
+  const processors = ["shape_draw_processor", "bounce_processor"]
+
+  if (hasGravity) {
+    processors.push("gravity_processor")
+  }
+
+  if (hasCollision) {
+    processors.push("edge_collision_processor")
+  }
+
+  if (hasJitter) {
+    processors.push("jitter_processor")
+  }
+
+  const box = ecs.createEntity("box", [
+    "position",
+    "mass",
+    "shape",
+    "collision"
+  ], processors)
+
+  ecs.addEntity(box)
+}
+
+const addRandomBox = (amount: number): void => {
+  const processors = ["shape_draw_processor", "bounce_processor"]
+
+  if (hasGravity) {
+    processors.push("gravity_processor")
+  }
+
+  if (hasCollision) {
+    processors.push("edge_collision_processor")
+  }
+
+  if (hasJitter) {
+    processors.push("jitter_processor")
+  }
+
+  for (let i = 0; i < amount; i++) {
+    const box = ecs.createEntity("box", [
+      "position",
+      "mass",
+      "shape",
+      "collision"
+    ], processors)
+
+    const [position, shape, mass] = ecs.getEntityComponents(box, ["position", "shape", "mass"])
+
+    const colors = ["green", "blue", "orange", "red", "white"]
+    const randomColor = colors[Math.floor(Math.random() * colors.length)]
+    const randomMass = Math.random() * 0.5 + 0.1
+    const randomSize = Math.random() * 15
+    const randomX = Math.random() * canvas.width
+    const randomY = Math.random() * canvas.height
+    const randomVelocityX = Math.random() * (1 - -1) + -1
+
+    position.state.x = randomX
+    position.state.y = randomY
+    shape.state.color = randomColor
+    shape.state.size = randomSize
+    mass.state.mass = randomMass
+    mass.state.velocityX = randomVelocityX
+
+    ecs.addEntity(box)
+  }
+}
+
+// CHECKBOXES
+const gravityCheckbox = document.getElementById("gravity-checkbox") as HTMLInputElement
+const collisionCheckbox = document.getElementById("collision-checkbox") as HTMLInputElement
+const jitterCheckbox = document.getElementById("jitter-checkbox") as HTMLInputElement
+
+gravityCheckbox.addEventListener("change", () => {
+  const checked = gravityCheckbox.checked
+  const entities = ecs.getEntitiesByName("box")
+
+  if (!checked) {
+    hasGravity = false
+    for (let entity of entities) {
+      ecs.removeProcessorFromEntity(entity, "gravity_processor")
+    }
+  }
+
+  if (checked) {
+    hasGravity = true
+    for (let entity of entities) {
+      ecs.addProcessorToEntity(entity, "gravity_processor")
+    }
+  }
+})
+
+collisionCheckbox.addEventListener("change", () => {
+  const checked = collisionCheckbox.checked
+  const entities = ecs.getEntitiesByName("box")
+
+  if (!checked) {
+    hasCollision = false
+    for (let entity of entities) {
+      ecs.removeProcessorFromEntity(entity, "edge_collision_processor")
+    }
+  }
+
+  if (checked) {
+    hasCollision = true
+    for (let entity of entities) {
+      ecs.addProcessorToEntity(entity, "edge_collision_processor")
+    }
+  }
+})
+
+jitterCheckbox.addEventListener("change", () => {
+  const checked = jitterCheckbox.checked
+  const entities = ecs.getEntitiesByName("box")
+
+  if (!checked) {
+    hasJitter = false
+    for (let entity of entities) {
+      ecs.removeProcessorFromEntity(entity, "jitter_processor")
+    }
+  }
+
+  if (checked) {
+    hasJitter = true
+    for (let entity of entities) {
+      ecs.addProcessorToEntity(entity, "jitter_processor")
+    }
+  }
+})
+
+// BUTTONS
+const randomBoxButton   = document.getElementById("random-box-button")
+const randomBoxButton50 = document.getElementById("random-box-button-50")
+const resetButton       = document.getElementById("reset-button")
+
+randomBoxButton.addEventListener("click", () => {
+  addRandomBox(1)
+})
+
+randomBoxButton50.addEventListener("click", () => {
+  addRandomBox(50)
+})
+
+const resetState = () => {
+  ecs.removeAllEntities()
+  addDefaultBox()
+}
+
+resetButton.addEventListener("click", () => {
+  resetState()
+})
+
+addDefaultBox()
 gameloop()
-
-
-const playerRendererCheckbox = document.getElementById("player-renderer") as HTMLInputElement
-const playerRendererContainer = document.getElementById("player-renderer-container")
-const playerRendererSize = document.getElementById("player-renderer-size") as HTMLInputElement
-
-const playerControlsCheckbox = document.getElementById("player-controls") as HTMLInputElement
-const playerControlsContainer = document.getElementById("player-controls-container")
-const playerControlsSpeed = document.getElementById("player-controls-speed") as HTMLInputElement
-const playerControlsRunSpeed = document.getElementById("player-controls-run-speed") as HTMLInputElement
-
-playerRendererCheckbox.addEventListener("change", () => {
-  const checkbox = playerRendererCheckbox
-  const isChecked = checkbox.checked
-  const player = ECS.getEntity("Player")
-
-  if (isChecked) {
-    playerRendererContainer.style.display = "block"
-    ECS.addComponentToEntity(player, "playerBox")
-  }
-
-  if (!isChecked) {
-    playerRendererContainer.style.display = "none"
-    ECS.removeComponentFromEntity(player, "playerBox")
-  }
-
-  updatePlayerCodeSnippet()
-})
-
-playerRendererSize.addEventListener("change", () => {
-  const player = ECS.getEntity("Player")
-  player.state.height = Number(playerRendererSize.value)
-  player.state.width = Number(playerRendererSize.value)
-
-  updatePlayerCodeSnippet()
-})
-
-playerControlsCheckbox.addEventListener("change", () => {
-  const checkbox = playerControlsCheckbox
-  const isChecked = checkbox.checked
-  const player = ECS.getEntity("Player")
-
-  if (isChecked) {
-    playerControlsContainer.style.display = "block"
-    ECS.addComponentToEntity(player, "control")
-  }
-
-  if (!isChecked) {
-    playerControlsContainer.style.display = "none"
-    ECS.removeComponentFromEntity(player, "control")
-  }
-
-  updatePlayerCodeSnippet()
-})
-
-playerControlsSpeed.addEventListener("change", () => {
-  const player = ECS.getEntity("Player")
-  player.state.moveSpeed = Number(playerControlsSpeed.value)
-
-  updatePlayerCodeSnippet()
-})
-
-playerControlsRunSpeed.addEventListener("change", () => {
-  const player = ECS.getEntity("Player")
-  player.state.runSpeed = Number(playerControlsRunSpeed.value)
-
-  updatePlayerCodeSnippet()
-})
-
-
-
-const enemyRendererCheckbox = document.getElementById("enemy-renderer") as HTMLInputElement
-const enemyRendererContainer = document.getElementById("enemy-renderer-container")
-const enemyRendererSize = document.getElementById("enemy-renderer-size") as HTMLInputElement
-
-const enemyCollisionCheckbox = document.getElementById("enemy-collision") as HTMLInputElement
-
-const enemyGrowCheckbox = document.getElementById("enemy-grow") as HTMLInputElement
-const enemyGrowContainer = document.getElementById("enemy-grow-container")
-const enemyGrowSpeed = document.getElementById("enemy-grow-speed")
-const enemyGrowMaxSize = document.getElementById("enemy-grow-maxSize")
-
-const enemyJitterCheckbox = document.getElementById("enemy-jitter") as HTMLInputElement
-
-const enemyColorCheckbox = document.getElementById("enemy-color") as HTMLInputElement
-const enemyColorContainer = document.getElementById("enemy-color-container")
-const enemyColorSpeed = document.getElementById("enemy-color-speed")
-
-enemyRendererCheckbox.addEventListener("change", () => {
-  const checkbox = enemyRendererCheckbox
-  const isChecked = checkbox.checked
-
-  const enemies = ECS.getEntitiesByName("enemy")
-
-  enemies.forEach((enemy) => {
-    if (isChecked) {
-      ECS.addComponentToEntity(enemy, "box")
-    }
-
-    if (!isChecked) {
-      ECS.removeComponentFromEntity(enemy, "box")
-    }
-  })
-
-  if (isChecked) {
-    enemyRendererContainer.style.display = "block"
-  }
-
-  if (!isChecked) {
-    enemyRendererContainer.style.display = "none"
-  }
-
-  updateEnemyCodeSnippet()
-})
-
-enemyRendererSize.addEventListener("change", () => {
-  const enemies = ECS.getEntitiesByName("enemy")
-
-  enemies.forEach((enemy) => {
-    enemy.state.height = Number(enemyRendererSize.value)
-    enemy.state.width = Number(enemyRendererSize.value)
-  })
-
-  updatePlayerCodeSnippet()
-})
-
-enemyCollisionCheckbox.addEventListener("change", () => {
-  const checkbox = enemyCollisionCheckbox
-  const isChecked = checkbox.checked
-
-  const enemies = ECS.getEntitiesByName("enemy")
-
-  enemies.forEach((enemy) => {
-    if (isChecked) {
-      ECS.removeComponentFromEntity(enemy, "onCollisionDeleteComponent")
-    }
-
-    if (!isChecked) {
-      ECS.addComponentToEntity(enemy, "onCollisionDeleteComponent")
-    }
-  })
-
-  updateEnemyCodeSnippet()
-})
-
-enemyGrowCheckbox.addEventListener("change", () => {
-  const checkbox = playerControlsCheckbox
-  const isChecked = checkbox.checked
-
-  if (isChecked) {
-    enemyGrowContainer.style.display = "block"
-    isGrowEffectChecked = true
-  }
-
-  if (!isChecked) {
-    enemyGrowContainer.style.display = "none"
-    isGrowEffectChecked = false
-  }
-
-  updateEnemyCodeSnippet()
-})
-
-enemyGrowSpeed.addEventListener("change", () => {
-
-})
-
-playerControlsSpeed.addEventListener("change", () => {
-  const player = ECS.getEntity("Player")
-  player.state.moveSpeed = Number(playerControlsSpeed.value)
-
-  updatePlayerCodeSnippet()
-})
-
-playerControlsRunSpeed.addEventListener("change", () => {
-  const player = ECS.getEntity("Player")
-  player.state.runSpeed = Number(playerControlsRunSpeed.value)
-
-  updatePlayerCodeSnippet()
-})

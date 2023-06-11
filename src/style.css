@@ -1,57 +1,37 @@
-html {
-  font-family: Helvetica;
+button {
+  border: none;
+  background-color: hsla(0, 0%, 95%, 1);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#reset-button {
+  background-color: hsla(200, 100%, 70%, 1);
+  color: hsla(200, 100%, 10%, 1);
 }
 
 .container {
   display: grid;
-  grid-template-columns: max-content minmax(400px, max-content);
-  grid-gap: 10px;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
 }
 
 .controls {
-  background-color: hsla(0, 0%, 90%, 1);
-  padding: 20px;
+  margin-top: 20px;
+}
+
+.buttons {
   display: grid;
-  grid-gap: 50px;
+  width: max-content;
+  grid-gap: 5px;
 }
 
-.components > div {
-  margin: 20px 0;
-  background-color: hsla(0, 0%, 93%, 1);
-  padding: 10px;
-}
-
-.detail-input {
-  margin-left: 10px;
-  margin-top : 10px;
-}
-
-.detail-input > label {
-  display: block;
-  font-size: 16px;
-}
-
-.detail-input > input {
-  margin-bottom: 10px;
-}
-
-.label-header {
-  font-weight: 600;
-}
-
-code {
-  background-color: hsla(0, 0%, 100%, 1);
-  padding         : 5px;
-  font-size       : 16px;
-  color           : rgb(14, 38, 173);
-  max-width       : 100px;
-  overflow-x      : scroll;
-}
-
-@media only screen and (max-width: 700px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    max-width: 500px;
-  }
+.checkboxes {
+  display: grid;
+  grid-gap: 20px;
+  width: max-content;
+  margin-bottom: 50px;
 }
