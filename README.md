@@ -16,9 +16,6 @@ npm i javascript-entity-component-system
 - 🤝 **TypeScript support** - JECS is built and is best used with TypeScript. Type defintions and hinting are provided naturally.
 - 📄 **Documentation** - JECS has documentation for every method and often examples on how to use them.
 
-## Live Demo (DEPRECATED, WILL BE UPDATED SOON)
-[JS BIN](https://jsbin.com/bunetigumo/edit?html,output)
-
 ## Getting started
 In essence it works like this:
 1. You write components and processors and register them in the system.
@@ -146,7 +143,7 @@ Well the only thing you have to worry about now is to make more components and p
 In a ECS, components and processors are your bread and butter. You write those to have effects on your entities. It's starts to become real fun when you realize that you can mix and match components and processors to your liking. This flexiblity is the real strength of an ECS. That's why it's such a often used pattern in game development. Enjoy :)
 
 ## Documentation
-[Docs](https://stuhl.github.io/javascript-entity-component-system/)
+[Docs](https://stuhl.github.io/javascript-entity-component-system/docs)
 
 ## Roadmap
 - v2.1.0
