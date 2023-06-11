@@ -19,7 +19,8 @@
   "targets": {
     "website": {
       "source": "./src/index.html",
-      "distDir": "./"
+      "distDir": "./",
+      "publicUrl": "https://stuhl.github.io/javascript-entity-component-system/"
     }
   },
   "repository": {
