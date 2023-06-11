@@ -2,8 +2,8 @@ function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
 }
 
-$parcel$export(module.exports, "EntityComponentSystem", () => $882b6d93070905b3$export$7403e50fa4958270);
-class $882b6d93070905b3$export$7403e50fa4958270 {
+$parcel$export(module.exports, "EntityComponentSystem", function () { return $1a66f5c748ad087c$export$7403e50fa4958270; });
+class $1a66f5c748ad087c$export$7403e50fa4958270 {
     constructor(){
         this.components = [];
         this.processors = [];

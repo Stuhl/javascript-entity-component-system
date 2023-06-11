@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/index.460f891d.css"><script type="module" src="/index.e347f774.js"></script><script src="/index.bca4918e.js" nomodule defer></script><link rel="stylesheet" href="/index.1f1b23d4.css"><script src="/index.b7f0e208.js"></script><script>hljs.highlightAll();</script></head><body> <nav> <ul class="nav-items"> <li> <a href="https://github.com/Stuhl/javascript-entity-component-system" target="_blank"> Github </a> </li> <li> <a href="https://stuhl.github.io/javascript-entity-component-system/docs/" target="_blank"> Docs </a> </li> </ul> </nav> <div class="header"> <h1>JECS.js</h1> <p>The Entity Component System library for modern HTML5 games - Easy to use and dependency free.</p> </div> <div class="information-container"> <div class="information-card"> <h3>Lightweight 💾</h3> <p>3.80kb minified</p> </div> <div class="information-card"> <h3>Simple API ⚡</h3> <p>OOP & Procedural methods</p> </div> <div class="information-card"> <h3>No Dependencies 🥤</h3> <p>0 external libraries used</p> </div> <div class="information-card"> <h3>TypeScript Support 🤝</h3> <p>Type defintions provided</p> </div> <div class="information-card"> <h3>Documentation 📄</h3> <p>Documentation for every method</p> </div> </div> <div class="basic-game"> <canvas height="500" width="500" style="background-color:#000"></canvas> <div class="controls"> <div class="checkboxes"> <div class="checkbox-container"> <label>Gravity</label> <input id="gravity-checkbox" checked type="checkbox"> </div> <div class="checkbox-container"> <label>Collision</label> <input id="collision-checkbox" checked type="checkbox"> </div> <div class="checkbox-container"> <label>Jitter</label> <input id="jitter-checkbox" type="checkbox"> </div> </div> <div class="buttons"> <button id="random-box-button"> Add 1 random Box </button> <button id="random-box-button-50"> Add 50 random Boxes </button> <button id="reset-button"> Reset </button> </div> <div> <a class="game-source" href="https://github.com/Stuhl/javascript-entity-component-system/blob/master/src/example.ts" target="_blank">Checkout the source</a> </div> </div> </div> <div class="example"> <div class="code-block component-block"> <h2>Components</h2> <p>You first write your data structures (in ECS terms called components)</p> <pre>
+          <code>const PositionComponent = {
+  name: "position",
+  state: {         
+    x: 0,
+    y: 0
+  }
+}
+
+ECS.addComponent(PositionComponent)</code>
+<code>const MassComponent = {
+  name: "mass",
+  state: {
+    mass: 1.5,
+    velocityX: 0,
+    velocityY: 0
+  }
+}
+
+ECS.addComponent(MassComponent)</code>
+        </pre> </div> <div class="code-block processor-block"> <h2>Processors</h2> <p>You then write your processors that will handle the logic</p> <pre>
+          <code>const GravityProcessor = {
+  name: "gravity_processor",
+  required: ["position", "mass"],
+  update(entity, components, processor) {
+    const [position, mass] = components
+    const gravity          = 2
+    const result           = mass.state.mass * gravity
+    
+    mass.state.velocityY += result
+    position.state.y += mass.state.velocityY
+  }
+}
+
+ECS.addProcessor(GravityProcessor)</code>
+        </pre> </div> <div class="code-block entity-block"> <h2>Entities</h2> <p>With the added components and processors we can now compose entities</p> <pre>
+          <code>const Player = ECS.createEntity("Player", ["position", "mass"], ["gravity_processor"])
+
+ECS.addEntity(player)
+          </code>
+        </pre> </div> <div class="code-block update-block"> <h2>One method to rule them all</h2> <p>You now call the libraries update method and watch you entities do fancy things</p> <pre>
+          <code>const gameloop = () => {
+  // this is your game loop
+
+  // input ...
+  ECS.update()
+  // render ...
+
+  requestAnimationFrame()
+}
+
+gameloop()</code>
+        </pre> </div> </div> <p class="copyright">© 2023 <a href="https://github.com/Stuhl" target="_blank">Kaan "Stuhl" Aksu</a></p> </body></html>

@@ -16,17 +16,24 @@
     "web game",
     "game dev"
   ],
+  "targets": {
+    "website": {
+      "source": "./src/index.html",
+      "distDir": "./"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Stuhl/javascript-entity-component-system"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html --no-cache",
-    "build": "parcel build && typedoc src/index.ts",
-    "doc": "./node_modules/.bin/esdoc"
+    "dev": "parcel ./src/website.html --no-cache",
+    "build-website": "parcel build",
+    "build-library": "parcel build src/index.ts && typedoc src/index.ts"
   },
   "author": "Stuhl",
   "license": "MIT",
+  "browserslist": "> 0.5%, last 10 versions, not dead",
   "devDependencies": {
     "@parcel/packager-ts": "^2.8.3",
     "@parcel/transformer-typescript-types": "^2.8.3",
