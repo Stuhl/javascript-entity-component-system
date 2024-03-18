@@ -1,6 +1,5 @@
 export type Component = {
   name          : string
-  componentType : string
   state         : {
     [key: string]: any
   }
@@ -144,7 +143,7 @@ export class EntityComponentSystem {
       for (let i = 0; i < length; i++) {
         const currentEntityComponent = entity.components[i]
 
-        if (currentEntityComponent.name === currentComponent || currentEntityComponent.componentType === currentComponent) {
+        if (currentEntityComponent.name === currentComponent) {
           foundComponents.push(currentEntityComponent)
         }
       }
@@ -250,7 +249,7 @@ export class EntityComponentSystem {
     const length = entity.components.length
 
     for (let i = 0; i < length; i++) {
-      if (entity.components[i].name === component || entity.components[i].componentType === component) {
+      if (entity.components[i].name === component) {
         return true
       }
     }
