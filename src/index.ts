@@ -1,6 +1,6 @@
 export type Component = {
-  name     : string
-  state    : {
+  name          : string
+  state         : {
     [key: string]: any
   }
   onAttach?: Function

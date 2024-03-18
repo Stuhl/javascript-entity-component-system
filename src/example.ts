@@ -3,24 +3,28 @@ import { EntityComponentSystem, Component, Processor, Entity } from "./index"
 const ecs = new EntityComponentSystem()
 
 const positionComponent: Component = {
-  name : "position",
+  name          : "position name",
+  componentType : "position",
   state: {
     x: 0,
     y: 0
   }
 }
 
-const massComponent: Component = {
-  name : "mass",
+const physicsComponent: Component = {
+  name          : "physics name",
+  componentType : "physics",
   state: {
-    mass     : 0.2,
-    velocityX: 1,
-    velocityY: 0
+    accelerationX : 0.1,
+    accelerationY : 0.2,
+    velocityX     : 0,
+    velocityY     : 0
   }
 }
 
 const shapeComponent: Component = {
-  name : "shape",
+  name          : "shape name",
+  componentType : "shape",
   state: {
     size : 10,
     color: "red"
@@ -28,23 +32,25 @@ const shapeComponent: Component = {
 }
 
 const collisionComponent: Component = {
-  name : "collision",
+  name          : "collision name",
+  componentType : "collision",
   state: {
     collisionX: false,
     collisionY: false
   }
 }
 
-const gravityProcessor: Processor = {
-  name    : "gravity_processor",
-  required: ["position", "mass"],
+const physicsProcessor: Processor = {
+  name    : "physics_processor",
+  required: ["position", "physics"],
   update(entity: Entity, components: Component[], processor: Processor) {
-    const [position, mass] = components
+    const [position, physics] = components
 
-    mass.state.velocityY += mass.state.mass
 
-    position.state.y += mass.state.velocityY
-    position.state.x += mass.state.velocityX
+    physics.state.velocityY += physics.state.accelerationY;
+
+    position.state.y += physics.state.velocityY
+    position.state.x += physics.state.velocityX
   }
 }
 
@@ -87,16 +93,16 @@ const edgeCollisionProcessor: Processor = {
 
 const bounceProcessor: Processor = {
   name    : "bounce_processor",
-  required: ["position", "collision", "mass"],
+  required: ["position", "collision", "physics"],
   update(entity: Entity, components: Component[], processor: Processor) {
-    const [position, collision, mass] = components
+    const [position, collision, physics] = components
 
     if (collision.state.collisionY) {
-      mass.state.velocityY = -mass.state.velocityY
+      physics.state.velocityY = -physics.state.velocityY
     }
 
     if (collision.state.collisionX) {
-      mass.state.velocityX = -mass.state.velocityX
+      physics.state.velocityX = -physics.state.velocityX
     }
   }
 }
@@ -113,11 +119,11 @@ const jitterProcessor: Processor = {
 }
 
 ecs.addComponent(positionComponent)
-ecs.addComponent(massComponent)
+ecs.addComponent(physicsComponent)
 ecs.addComponent(shapeComponent)
 ecs.addComponent(collisionComponent)
 
-ecs.addProcessor(gravityProcessor)
+ecs.addProcessor(physicsProcessor)
 ecs.addProcessor(shapeDrawProcessor)
 ecs.addProcessor(edgeCollisionProcessor)
 ecs.addProcessor(bounceProcessor)
@@ -141,7 +147,7 @@ const addDefaultBox = () => {
   const processors = ["shape_draw_processor", "bounce_processor"]
 
   if (hasGravity) {
-    processors.push("gravity_processor")
+    processors.push("physics_processor")
   }
 
   if (hasCollision) {
@@ -154,7 +160,7 @@ const addDefaultBox = () => {
 
   const box = ecs.createEntity("box", [
     "position",
-    "mass",
+    "physics",
     "shape",
     "collision"
   ], processors)
@@ -166,7 +172,7 @@ const addRandomBox = (amount: number): void => {
   const processors = ["shape_draw_processor", "bounce_processor"]
 
   if (hasGravity) {
-    processors.push("gravity_processor")
+    processors.push("physics_processor")
   }
 
   if (hasCollision) {
@@ -180,7 +186,7 @@ const addRandomBox = (amount: number): void => {
   for (let i = 0; i < amount; i++) {
     const box = ecs.createEntity("box", [
       "position",
-      "mass",
+      "physics",
       "shape",
       "collision"
     ], processors)
