@@ -54,8 +54,7 @@ const PositionComponent: Component = {
 
 ```TypeScript
 const physicsComponent: Component = {
-  name          : "physics name",
-  componentType : "physics",
+  name          : "physics",
   state: {
     accelerationX : 0.1,
     accelerationY : 0.2,
