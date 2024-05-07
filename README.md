@@ -53,12 +53,13 @@ const PositionComponent: Component = {
 ```
 
 ```TypeScript
-const MassComponent: Component = {
-  name: "mass",
+const physicsComponent: Component = {
+  name          : "physics",
   state: {
-    mass: 1.5,
-    velocityX: 0,
-    velocityY: 0
+    accelerationX : 0.1,
+    accelerationY : 0.2,
+    velocityX     : 0,
+    velocityY     : 0
   }
 }
 ```
@@ -122,7 +123,7 @@ ECS.addProcessor(GravityProcessor)
 So after we registered our components and processors, we can now compose our entity:
 
 ```TypeScript
-const Player: Entity = ECS.createEntity("Player", ["position", "mass"], ["gravity_processor"])
+const Player: Entity = ECS.createEntity("Player", ["position", "physics"], ["gravity_processor"])
 ```
 
 After that you register it in the system:
