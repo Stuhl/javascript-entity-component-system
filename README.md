@@ -150,3 +150,8 @@ In a ECS, components and processors are your bread and butter. You write those t
 - v2.1.0
     - Implement .freeze() and .unfreeze() to make one-time effects possible
     - Better error handling
+
+## Live Examples
+
+You can see the ECS in action at the [Sessionless website](https://sessionless.org), and you can checkout that code in that [website's repo](https://www.github.com/planet-nine-app/sessionless-dot-org). 
+There are flames and balloons :).
